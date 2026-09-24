@@ -47,7 +47,8 @@ a{color:inherit;text-decoration:none}
 /* ---------- header ---------- */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(13,13,13,.92);backdrop-filter:blur(6px)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{font:400 1.9rem/1 var(--serif);color:#fff;letter-spacing:.01em}
+.logo{display:inline-flex;align-items:center}
+.logo img{height:34px;width:auto;display:block}
 header nav{display:flex;gap:28px;font:600 .95rem var(--sans)}
 header nav a:hover{color:var(--red)}
 .btn-sm{background:var(--red);color:#fff;font:700 .85rem/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;
@@ -66,8 +67,12 @@ header nav a:hover{color:var(--red)}
 .hero h1 em{display:block;font-style:normal;color:var(--red);font-size:1.22em;position:relative;width:max-content}
 .scribble{position:absolute;left:0;bottom:-10px;width:100%;height:14px}
 .hero p.lead{margin:24px 0 16px;font-size:1.1rem;color:#e9e1d6;max-width:30ch}
-.hero .pill{color:#fff;margin-bottom:32px}
+.hero .pill{color:#fff;margin-bottom:8px}
 .hero .btn{margin-top:4px}
+.price{display:block;margin:18px 0 22px}
+.price-label{display:block;font:600 1rem/1.3 var(--sans);margin-bottom:4px}
+.price-amount{font:400 clamp(2rem,4.2vw,2.7rem)/1 var(--serif);
+  text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:4px;text-underline-offset:8px}
 
 /* ---------- caderno ---------- */
 .torn-top{height:26px;background:var(--paper);clip-path:polygon(0 60%,4% 20%,9% 55%,14% 15%,20% 60%,26% 25%,31% 55%,37% 10%,43% 50%,49% 20%,55% 60%,61% 15%,67% 55%,73% 20%,79% 60%,85% 15%,91% 55%,96% 25%,100% 50%,100% 100%,0 100%)}
@@ -96,8 +101,8 @@ header nav a:hover{color:var(--red)}
 .season{border:1px solid #6a3a2a;border-radius:10px;overflow:hidden;background:#141111;text-align:center;padding-bottom:22px}
 .season .ph{aspect-ratio:4/3.3}
 .season .ph::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#141111 0%,transparent 45%)}
-.season .tag{display:inline-block;margin-top:-26px;position:relative;z-index:3;background:var(--red);color:#fff;
-  font:400 1.25rem/1 var(--serif);padding:8px 16px;transform:rotate(-2deg);border:2px solid #fff}
+.season .tag{display:inline-block;margin-top:-26px;position:relative;z-index:3;transform:rotate(-2deg)}
+.season .tag img{height:34px;width:auto;display:block;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
 .season h3{font:400 1.9rem/1.1 var(--serif);margin-top:14px}
 .season h3 sup{font-size:.55em}
 .season p{color:#e9e1d6;margin:4px 0 14px}
@@ -116,13 +121,18 @@ header nav a:hover{color:var(--red)}
 
 /* ---------- destaque ---------- */
 .stage{position:relative;padding:48px 0 64px;overflow:hidden;background:#0d0d0d}
-.stage-bg{position:absolute;inset:0}
-.stage-bg::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(40,0,6,.55)}
+.stage-bg{position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 420px 320px at 12% 30%,rgba(226,40,58,.55) 0%,transparent 70%),
+    radial-gradient(ellipse 420px 320px at 88% 70%,rgba(226,40,58,.55) 0%,transparent 70%),
+    radial-gradient(ellipse 900px 500px at 50% 120%,rgba(120,10,20,.7) 0%,transparent 65%),
+    #140404}
+.stage-bg::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(20,0,4,.35)}
 .stage .wrap{position:relative;z-index:3}
 .stage .kicker{text-align:center;margin-bottom:22px}
 .box{max-width:520px;margin:0 auto;background:var(--paper);color:var(--ink);border:3px solid var(--red);
   outline:3px solid #f3ece0;border-radius:6px;padding:32px 36px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
-.box h2{font:400 clamp(1.8rem,3.6vw,2.3rem)/1.1 var(--serif)}
+.box h2{font:400 clamp(1.6rem,3.2vw,2.05rem)/1.1 var(--serif)}
 .checks{list-style:none;display:inline-grid;gap:10px;text-align:left;margin:18px 0 26px;font-size:1.05rem}
 .checks li{display:flex;align-items:center;gap:12px}
 .checks li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;
@@ -144,7 +154,8 @@ details .more{padding:0 20px 18px;color:#3a3530}
 
 /* ---------- footer ---------- */
 footer{background:#0d0d0d;text-align:center;padding:56px 0 48px}
-footer .logo{font-size:2.6rem;display:inline-block;background:var(--red);padding:6px 22px;transform:rotate(-2deg)}
+footer .logo{display:inline-block;transform:rotate(-2deg)}
+footer .logo img{height:52px;width:auto}
 footer p{font:400 1.5rem/1.3 var(--serif);margin-top:18px}
 footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;letter-spacing:.06em}
 
@@ -181,7 +192,7 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
 
 <header>
   <div class="wrap">
-    <a class="logo" href="#topo">Rebelde</a>
+    <a class="logo" href="#topo"><img src="img/logo.png" alt="Rebelde"></a>
     <nav aria-label="Seções">
       <a href="#temporadas">Temporadas</a>
       <a href="#personagens">Personagens</a>
@@ -204,7 +215,8 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
           </em>
         </h1>
         <p class="lead">Reviva os romances, as músicas e cada emoção de Elite Way School.</p>
-        <span class="pill">Novela completa • Dublada</span><br>
+        <span class="pill">Novela completa • Dublada</span>
+        <p class="price"><span class="price-label">As 3 temporadas por</span><span class="price-amount">R$ 19,90</span></p>
         <a class="btn" href="#destaque">Quero reviver essa história</a>
       </div>
     </div>
@@ -236,17 +248,17 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
       <div class="season-grid">
         <article class="season">
           <div class="ph"><img src="img/temporada1.jpg" alt="" onerror="this.remove()"><span>img/temporada1.jpg</span></div>
-          <span class="tag">Rebelde</span>
+          <span class="tag"><img src="img/logo.png" alt="Rebelde"></span>
           <h3>1<sup>a</sup> Temporada</h3><p>Onde tudo começou</p><span class="pill">Dublada</span>
         </article>
         <article class="season">
           <div class="ph"><img src="img/temporada2.jpg" alt="" onerror="this.remove()"><span>img/temporada2.jpg</span></div>
-          <span class="tag">Rebelde</span>
+          <span class="tag"><img src="img/logo.png" alt="Rebelde"></span>
           <h3>2<sup>a</sup> Temporada</h3><p>Mais emoções e descobertas</p><span class="pill">Dublada</span>
         </article>
         <article class="season">
           <div class="ph"><img src="img/temporada3.jpg" alt="" onerror="this.remove()"><span>img/temporada3.jpg</span></div>
-          <span class="tag">Rebelde</span>
+          <span class="tag"><img src="img/logo.png" alt="Rebelde"></span>
           <h3>3<sup>a</sup> Temporada</h3><p>Uma despedida inesquecível</p><span class="pill">Dublada</span>
         </article>
       </div>
@@ -271,19 +283,20 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
     </div>
   </section>
 
-  <!-- DESTAQUE (sem preço) -->
+  <!-- DESTAQUE -->
   <section class="stage" id="destaque">
-    <div class="stage-bg ph"><img src="img/show.jpg" alt="" onerror="this.remove()"><span>img/show.jpg</span></div>
+    <div class="stage-bg"></div>
     <p class="side-hand" aria-hidden="true">Música<br>amizade<br>amor<br>sempre ♡</p>
     <div class="wrap">
       <p class="kicker">Sua próxima maratona começa aqui</p>
       <div class="box">
-        <h2>Rebelde: a novela completa</h2>
+        <h2>Rebelde — Novela completa</h2>
         <ul class="checks">
           <li>3 temporadas reunidas</li>
           <li>Novela dublada em português</li>
           <li>Uma história para reviver</li>
-        </ul><br>
+        </ul>
+        <p class="price"><span class="price-label">Tudo isso por</span><span class="price-amount">R$ 19,90</span></p>
         <!-- Troque o href pelo link de onde assistir -->
         <a class="btn" href="#">Quero assistir Rebelde</a>
       </div>
@@ -305,7 +318,7 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
 </main>
 
 <footer>
-  <span class="logo">Rebelde</span>
+  <span class="logo"><img src="img/logo.png" alt="Rebelde"></span>
   <p>Algumas histórias nunca saem da gente.</p>
   <small>Página de fã • Projeto independente, sem vínculo com os detentores da obra</small>
 </footer>
