@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seu coração ainda é Rebelde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Caveat:wght@600;700&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#d2162b; --red-dark:#8f0d1c; --ink:#0d0d0d; --paper:#f3ece0; --paper-line:#c9d6e3;
+  --white:#fff; --muted:#bdb6ad;
+  --serif:"DM Serif Display", Georgia, "Times New Roman", serif;
+  --hand:"Caveat", "Comic Sans MS", cursive;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --sans:"Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{background:var(--ink);color:var(--white);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+
+/* ---------- placeholders de imagem ---------- */
+.ph{position:relative;overflow:hidden;background:
+  linear-gradient(135deg,#3a0a10,#1a1a1a 60%,#5a0d17);}
+.ph img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.ph span{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:8px;
+  font:500 .8rem/1.3 var(--sans);color:rgba(255,255,255,.55);letter-spacing:.02em}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(180deg,#e3223a,var(--red-dark));
+  color:#fff;font:700 1.05rem/1 var(--cond);letter-spacing:.06em;text-transform:uppercase;
+  padding:16px 28px;border-radius:999px;box-shadow:0 8px 24px rgba(210,22,43,.45),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(210,22,43,.55)}
+.btn::after{content:"";border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.pill{display:inline-block;border:1.5px solid currentColor;border-radius:999px;padding:4px 14px;
+  font:600 .8rem/1.4 var(--cond);letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- header ---------- */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(13,13,13,.92);backdrop-filter:blur(6px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font:400 1.9rem/1 var(--serif);color:#fff;letter-spacing:.01em}
+header nav{display:flex;gap:28px;font:600 .95rem var(--sans)}
+header nav a:hover{color:var(--red)}
+.btn-sm{background:var(--red);color:#fff;font:700 .85rem/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 18px;border-radius:6px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:#0d0d0d}
+.hero-bg{position:absolute;inset:0 0 0 30%}
+.hero-bg::after{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(90deg,#0d0d0d 0%,rgba(13,13,13,.85) 18%,rgba(13,13,13,0) 55%),
+             linear-gradient(0deg,#0d0d0d 0%,rgba(13,13,13,0) 25%)}
+.hero .wrap{position:relative;z-index:3;padding:72px 0 88px;min-height:620px;display:flex;flex-direction:column;justify-content:center}
+.hero-copy{max-width:460px}
+.kicker{font:600 .9rem/1.3 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:#e9e1d6;margin-bottom:12px}
+.hero h1{font:400 clamp(2.8rem,6.2vw,4.6rem)/.98 var(--serif);letter-spacing:-.01em}
+.hero h1 em{display:block;font-style:normal;color:var(--red);font-size:1.22em;position:relative;width:max-content}
+.scribble{position:absolute;left:0;bottom:-10px;width:100%;height:14px}
+.hero p.lead{margin:24px 0 16px;font-size:1.1rem;color:#e9e1d6;max-width:30ch}
+.hero .pill{color:#fff;margin-bottom:32px}
+.hero .btn{margin-top:4px}
+
+/* ---------- caderno ---------- */
+.torn-top{height:26px;background:var(--paper);clip-path:polygon(0 60%,4% 20%,9% 55%,14% 15%,20% 60%,26% 25%,31% 55%,37% 10%,43% 50%,49% 20%,55% 60%,61% 15%,67% 55%,73% 20%,79% 60%,85% 15%,91% 55%,96% 25%,100% 50%,100% 100%,0 100%)}
+.torn-bottom{height:26px;background:var(--paper);clip-path:polygon(0 0,100% 0,100% 50%,95% 85%,89% 45%,83% 90%,77% 40%,71% 80%,65% 45%,59% 90%,53% 40%,47% 85%,41% 45%,35% 90%,29% 40%,23% 85%,17% 50%,11% 90%,5% 40%,0 80%)}
+.notebook{background:var(--paper);color:var(--ink);position:relative;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,var(--paper-line) 31px 32px);
+  padding:40px 0 56px}
+.notebook::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:18px;
+  background:radial-gradient(circle,#d8cfc1 5px,transparent 6px) 0 0/18px 48px repeat-y}
+.hand{font:700 1.7rem/1 var(--hand);color:var(--red)}
+.notebook h2{font:400 clamp(2rem,4.6vw,3.3rem)/1.05 var(--serif);margin:4px 0 10px}
+.notebook .sub{font-size:1.1rem;color:#3a3530}
+.center{text-align:center}
+.memories{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+.memory{position:relative}
+.memory .ph{aspect-ratio:4/3;border-radius:2px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.memory figcaption{position:absolute;left:50%;bottom:-16px;transform:translateX(-50%) rotate(-1.5deg);
+  background:#f8f3ea;padding:8px 18px;font:400 1.1rem/1.2 var(--serif);white-space:nowrap;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.memory:nth-child(2) figcaption{transform:translateX(-50%) rotate(1deg)}
+
+/* ---------- temporadas ---------- */
+.seasons{padding:64px 0 72px;background:#0d0d0d radial-gradient(ellipse at top,#2a0a0f 0%,transparent 60%)}
+.seasons h2,.cast h2{font:400 clamp(2rem,4.6vw,3.3rem)/1.05 var(--serif)}
+.seasons .sub{color:#e9e1d6;font-size:1.1rem;margin-top:8px}
+.season-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.season{border:1px solid #6a3a2a;border-radius:10px;overflow:hidden;background:#141111;text-align:center;padding-bottom:22px}
+.season .ph{aspect-ratio:4/3.3}
+.season .ph::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#141111 0%,transparent 45%)}
+.season .tag{display:inline-block;margin-top:-26px;position:relative;z-index:3;background:var(--red);color:#fff;
+  font:400 1.25rem/1 var(--serif);padding:8px 16px;transform:rotate(-2deg);border:2px solid #fff}
+.season h3{font:400 1.9rem/1.1 var(--serif);margin-top:14px}
+.season h3 sup{font-size:.55em}
+.season p{color:#e9e1d6;margin:4px 0 14px}
+
+/* ---------- elenco ---------- */
+.cast{background:var(--red-dark) radial-gradient(ellipse at center,#c4142a 0%,#7a0b17 80%);padding:56px 0 64px;position:relative}
+.cast .sub{font:500 1.15rem var(--sans);margin-top:6px;color:#ffe9ea}
+.polaroids{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:32px}
+.polaroid{background:#f4efe6;padding:8px 8px 34px;box-shadow:0 8px 20px rgba(0,0,0,.35);position:relative;color:var(--ink)}
+.polaroid::before{content:"";position:absolute;top:-10px;left:50%;width:56px;height:20px;transform:translateX(-50%) rotate(-4deg);
+  background:rgba(230,215,185,.8)}
+.polaroid:nth-child(odd){transform:rotate(-2.5deg)}
+.polaroid:nth-child(even){transform:rotate(2deg)}
+.polaroid .ph{aspect-ratio:4/5}
+.polaroid b{position:absolute;left:0;right:0;bottom:6px;text-align:center;font:400 1.1rem var(--serif)}
+
+/* ---------- destaque ---------- */
+.stage{position:relative;padding:48px 0 64px;overflow:hidden;background:#0d0d0d}
+.stage-bg{position:absolute;inset:0}
+.stage-bg::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(40,0,6,.55)}
+.stage .wrap{position:relative;z-index:3}
+.stage .kicker{text-align:center;margin-bottom:22px}
+.box{max-width:520px;margin:0 auto;background:var(--paper);color:var(--ink);border:3px solid var(--red);
+  outline:3px solid #f3ece0;border-radius:6px;padding:32px 36px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.box h2{font:400 clamp(1.8rem,3.6vw,2.3rem)/1.1 var(--serif)}
+.checks{list-style:none;display:inline-grid;gap:10px;text-align:left;margin:18px 0 26px;font-size:1.05rem}
+.checks li{display:flex;align-items:center;gap:12px}
+.checks li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;
+  background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.side-hand{position:absolute;right:4%;top:50%;transform:translateY(-50%) rotate(-8deg);z-index:3;
+  font:700 2rem/1.05 var(--hand);color:rgba(255,255,255,.55);text-align:center}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--paper);color:var(--ink);padding:24px 0 64px}
+.faq h2{font:400 clamp(2rem,4.4vw,3rem)/1.1 var(--serif);text-align:center;margin-bottom:28px}
+.faq-list{max-width:900px;margin:0 auto;display:grid;gap:12px}
+details{background:#fbf8f2;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 1.4fr auto;gap:16px;align-items:center;padding:16px 20px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary .a{font-weight:400;color:#3a3530}
+summary::after{content:"";width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg)}
+details .more{padding:0 20px 18px;color:#3a3530}
+
+/* ---------- footer ---------- */
+footer{background:#0d0d0d;text-align:center;padding:56px 0 48px}
+footer .logo{font-size:2.6rem;display:inline-block;background:var(--red);padding:6px 22px;transform:rotate(-2deg)}
+footer p{font:400 1.5rem/1.3 var(--serif);margin-top:18px}
+footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;letter-spacing:.06em}
+
+.star{position:absolute;width:44px;height:44px;opacity:.8;pointer-events:none}
+
+/* ---------- responsivo ---------- */
+@media (max-width:900px){
+  header nav{display:none}
+  .hero-bg{inset:0}
+  .hero-bg::after{background:linear-gradient(0deg,#0d0d0d 30%,rgba(13,13,13,.55) 65%,rgba(13,13,13,.2) 100%)}
+  .hero .wrap{min-height:auto;padding:300px 0 56px}
+  .memories,.season-grid{grid-template-columns:1fr;gap:34px}
+  .season-grid{gap:18px}
+  .polaroids{grid-template-columns:repeat(3,1fr);gap:22px 14px}
+  .side-hand{display:none}
+  summary{grid-template-columns:1fr auto}
+  summary .a{grid-column:1;grid-row:2}
+  summary::after{grid-column:2;grid-row:1}
+  .notebook::before{display:none}
+}
+@media (max-width:480px){
+  .box{padding:26px 20px}
+  .btn{width:100%;justify-content:center;font-size:.95rem;padding:16px 18px}
+  .memory figcaption{font-size:1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 50 50"><path d="M25 3l6 16 17 1-13 11 5 17-15-10-15 10 5-17L2 20l17-1z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#topo">Rebelde</a>
+    <nav aria-label="Seções">
+      <a href="#temporadas">Temporadas</a>
+      <a href="#personagens">Personagens</a>
+    </nav>
+    <a class="btn-sm" href="#destaque">Quero assistir</a>
+  </div>
+</header>
+
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg ph"><img src="img/hero.jpg" alt="" onerror="this.remove()"><span>img/hero.jpg</span></div>
+    <svg class="star" style="left:3%;top:28px;color:#aaa;z-index:3"><use href="#star"/></svg>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="kicker">A novela que marcou uma geração</p>
+        <h1>Seu coração ainda é
+          <em>Rebelde.
+            <svg class="scribble" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+          </em>
+        </h1>
+        <p class="lead">Reviva os romances, as músicas e cada emoção de Elite Way School.</p>
+        <span class="pill">Novela completa • Dublada</span><br>
+        <a class="btn" href="#destaque">Quero reviver essa história</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMÓRIAS -->
+  <div class="torn-top"></div>
+  <section class="notebook">
+    <svg class="star" style="right:6%;top:30px;color:var(--red)"><use href="#star"/></svg>
+    <svg class="star" style="left:5%;top:90px;color:#333"><use href="#star"/></svg>
+    <div class="wrap center">
+      <p class="hand">É impossível não lembrar...</p>
+      <h2>Você lembra da primeira vez?</h2>
+      <p class="sub">As brigas de Mía e Roberta. Os romances. As músicas que você ainda sabe cantar.</p>
+      <div class="memories">
+        <figure class="memory"><div class="ph"><img src="img/romances.jpg" alt="" onerror="this.remove()"><span>img/romances.jpg</span></div><figcaption>Romances inesquecíveis</figcaption></figure>
+        <figure class="memory"><div class="ph"><img src="img/amizades.jpg" alt="" onerror="this.remove()"><span>img/amizades.jpg</span></div><figcaption>Amizades e rivalidades</figcaption></figure>
+        <figure class="memory"><div class="ph"><img src="img/musicas.jpg" alt="" onerror="this.remove()"><span>img/musicas.jpg</span></div><figcaption>Músicas que marcaram</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <div class="torn-bottom"></div>
+
+  <!-- TEMPORADAS -->
+  <section class="seasons" id="temporadas">
+    <div class="wrap center">
+      <h2>A história completa. Do começo ao fim.</h2>
+      <p class="sub">Suas 3 temporadas reunidas em um só lugar.</p>
+      <div class="season-grid">
+        <article class="season">
+          <div class="ph"><img src="img/temporada1.jpg" alt="" onerror="this.remove()"><span>img/temporada1.jpg</span></div>
+          <span class="tag">Rebelde</span>
+          <h3>1<sup>a</sup> Temporada</h3><p>Onde tudo começou</p><span class="pill">Dublada</span>
+        </article>
+        <article class="season">
+          <div class="ph"><img src="img/temporada2.jpg" alt="" onerror="this.remove()"><span>img/temporada2.jpg</span></div>
+          <span class="tag">Rebelde</span>
+          <h3>2<sup>a</sup> Temporada</h3><p>Mais emoções e descobertas</p><span class="pill">Dublada</span>
+        </article>
+        <article class="season">
+          <div class="ph"><img src="img/temporada3.jpg" alt="" onerror="this.remove()"><span>img/temporada3.jpg</span></div>
+          <span class="tag">Rebelde</span>
+          <h3>3<sup>a</sup> Temporada</h3><p>Uma despedida inesquecível</p><span class="pill">Dublada</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAGENS -->
+  <section class="cast" id="personagens">
+    <svg class="star" style="left:4%;top:24px;color:#ffd0d4"><use href="#star"/></svg>
+    <svg class="star" style="right:5%;top:30px;color:#ffd0d4;width:60px;height:60px"><use href="#star"/></svg>
+    <div class="wrap center">
+      <h2>Seis rebeldes. Uma geração inteira.</h2>
+      <p class="sub">Qual deles marcou a sua história?</p>
+      <div class="polaroids">
+        <div class="polaroid"><div class="ph"><img src="img/mia.jpg" alt="Mía" onerror="this.remove()"><span>mia.jpg</span></div><b>Mía</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/roberta.jpg" alt="Roberta" onerror="this.remove()"><span>roberta.jpg</span></div><b>Roberta</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/lupita.jpg" alt="Lupita" onerror="this.remove()"><span>lupita.jpg</span></div><b>Lupita</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/miguel.jpg" alt="Miguel" onerror="this.remove()"><span>miguel.jpg</span></div><b>Miguel</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/diego.jpg" alt="Diego" onerror="this.remove()"><span>diego.jpg</span></div><b>Diego</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/giovanni.jpg" alt="Giovanni" onerror="this.remove()"><span>giovanni.jpg</span></div><b>Giovanni</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUE (sem preço) -->
+  <section class="stage" id="destaque">
+    <div class="stage-bg ph"><img src="img/show.jpg" alt="" onerror="this.remove()"><span>img/show.jpg</span></div>
+    <p class="side-hand" aria-hidden="true">Música<br>amizade<br>amor<br>sempre ♡</p>
+    <div class="wrap">
+      <p class="kicker">Sua próxima maratona começa aqui</p>
+      <div class="box">
+        <h2>Rebelde: a novela completa</h2>
+        <ul class="checks">
+          <li>3 temporadas reunidas</li>
+          <li>Novela dublada em português</li>
+          <li>Uma história para reviver</li>
+        </ul><br>
+        <!-- Troque o href pelo link de onde assistir -->
+        <a class="btn" href="#">Quero assistir Rebelde</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <div class="torn-top"></div>
+  <section class="faq">
+    <div class="wrap">
+      <h2>Antes de dar o play</h2>
+      <div class="faq-list">
+        <details><summary>É a versão mexicana original?<span class="a">Sim, a novela com Mía, Roberta e a turma do <i>Elite Way School</i>.</span></summary><p class="more">Adicione aqui um texto mais completo, se quiser.</p></details>
+        <details><summary>São as 3 temporadas?<span class="a">Sim, a história completa.</span></summary><p class="more">Adicione aqui um texto mais completo, se quiser.</p></details>
+        <details><summary>A novela é dublada?<span class="a">Sim, dublada em português.</span></summary><p class="more">Adicione aqui um texto mais completo, se quiser.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="logo">Rebelde</span>
+  <p>Algumas histórias nunca saem da gente.</p>
+  <small>Página de fã • Projeto independente, sem vínculo com os detentores da obra</small>
+</footer>
+
+</body>
+</html>
