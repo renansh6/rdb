@@ -57,48 +57,68 @@ header nav a:hover{color:var(--red)}
 /* ---------- hero ---------- */
 .hero{background:#0d0d0d;text-align:center}
 .hero-banner{width:100%;max-width:560px;height:auto;margin:0 auto}
-.hero-cta{padding:8px 0 56px}
 .kicker{font:600 .9rem/1.3 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:#e9e1d6;margin-bottom:12px}
 .price{display:block;margin:18px 0 22px}
 .price-label{display:block;font:600 1rem/1.3 var(--sans);margin-bottom:4px}
 .price-amount{font:400 clamp(2rem,4.2vw,2.7rem)/1 var(--serif);
   text-decoration:underline;text-decoration-color:var(--red);text-decoration-thickness:4px;text-underline-offset:8px}
 
-/* ---------- caderno ---------- */
+/* ---------- texturas / bordas rasgadas ---------- */
+:root{--noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .25 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .torn-top{height:26px;background:var(--paper);clip-path:polygon(0 60%,4% 20%,9% 55%,14% 15%,20% 60%,26% 25%,31% 55%,37% 10%,43% 50%,49% 20%,55% 60%,61% 15%,67% 55%,73% 20%,79% 60%,85% 15%,91% 55%,96% 25%,100% 50%,100% 100%,0 100%)}
-.torn-bottom{height:26px;background:var(--paper);clip-path:polygon(0 0,100% 0,100% 50%,95% 85%,89% 45%,83% 90%,77% 40%,71% 80%,65% 45%,59% 90%,53% 40%,47% 85%,41% 45%,35% 90%,29% 40%,23% 85%,17% 50%,11% 90%,5% 40%,0 80%)}
-.notebook{background:var(--paper);color:var(--ink);position:relative;
-  background-image:repeating-linear-gradient(0deg,transparent 0 31px,var(--paper-line) 31px 32px);
-  padding:40px 0 56px}
-.notebook::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:18px;
-  background:radial-gradient(circle,#d8cfc1 5px,transparent 6px) 0 0/18px 48px repeat-y}
+.mark{position:relative;display:inline-block}
+.mark svg{position:absolute;left:-3%;bottom:-.12em;width:106%;height:.28em;overflow:visible}
+.carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.carousel::-webkit-scrollbar{display:none}
+.carousel>*{flex:0 0 calc((100% - 28px) / 3);scroll-snap-align:start}
+
+/* ---------- caderno ---------- */
+.notebook{position:relative;z-index:2;color:var(--ink);
+  margin:calc(min(560px,100vw) * -.02 - 12px) 6px 0;padding:34px 0 44px;
+  clip-path:polygon(0.00% 3px,1.25% 7px,2.50% 0px,3.75% 1px,5.00% 1px,6.25% 3px,7.50% 2px,8.75% 5px,10.00% 7px,11.25% 1px,12.50% 4px,13.75% 6px,15.00% 1px,16.25% 4px,17.50% 8px,18.75% 0px,20.00% 1px,21.25% 5px,22.50% 5px,23.75% 3px,25.00% 0px,26.25% 1px,27.50% 1px,28.75% 1px,30.00% 2px,31.25% 7px,32.50% 8px,33.75% 4px,35.00% 3px,36.25% 5px,37.50% 4px,38.75% 7px,40.00% 2px,41.25% 1px,42.50% 0px,43.75% 0px,45.00% 2px,46.25% 7px,47.50% 7px,48.75% 8px,50.00% 8px,51.25% 0px,52.50% 7px,53.75% 0px,55.00% 8px,56.25% 5px,57.50% 4px,58.75% 5px,60.00% 8px,61.25% 8px,62.50% 6px,63.75% 7px,65.00% 3px,66.25% 1px,67.50% 7px,68.75% 2px,70.00% 4px,71.25% 5px,72.50% 6px,73.75% 5px,75.00% 5px,76.25% 8px,77.50% 5px,78.75% 4px,80.00% 4px,81.25% 5px,82.50% 0px,83.75% 0px,85.00% 2px,86.25% 6px,87.50% 7px,88.75% 2px,90.00% 1px,91.25% 7px,92.50% 2px,93.75% 5px,95.00% 6px,96.25% 3px,97.50% 0px,98.75% 5px,100.00% 1px,100.00% calc(100% - 8px),98.75% calc(100% - 8px),97.50% calc(100% - 3px),96.25% calc(100% - 6px),95.00% calc(100% - 5px),93.75% calc(100% - 2px),92.50% calc(100% - 2px),91.25% calc(100% - 3px),90.00% calc(100% - 0px),88.75% calc(100% - 4px),87.50% calc(100% - 8px),86.25% calc(100% - 1px),85.00% calc(100% - 1px),83.75% calc(100% - 2px),82.50% calc(100% - 3px),81.25% calc(100% - 6px),80.00% calc(100% - 5px),78.75% calc(100% - 0px),77.50% calc(100% - 6px),76.25% calc(100% - 3px),75.00% calc(100% - 4px),73.75% calc(100% - 1px),72.50% calc(100% - 5px),71.25% calc(100% - 8px),70.00% calc(100% - 5px),68.75% calc(100% - 8px),67.50% calc(100% - 4px),66.25% calc(100% - 5px),65.00% calc(100% - 7px),63.75% calc(100% - 2px),62.50% calc(100% - 3px),61.25% calc(100% - 6px),60.00% calc(100% - 1px),58.75% calc(100% - 0px),57.50% calc(100% - 4px),56.25% calc(100% - 4px),55.00% calc(100% - 3px),53.75% calc(100% - 7px),52.50% calc(100% - 5px),51.25% calc(100% - 0px),50.00% calc(100% - 3px),48.75% calc(100% - 0px),47.50% calc(100% - 3px),46.25% calc(100% - 0px),45.00% calc(100% - 3px),43.75% calc(100% - 2px),42.50% calc(100% - 3px),41.25% calc(100% - 7px),40.00% calc(100% - 5px),38.75% calc(100% - 7px),37.50% calc(100% - 2px),36.25% calc(100% - 4px),35.00% calc(100% - 3px),33.75% calc(100% - 5px),32.50% calc(100% - 8px),31.25% calc(100% - 5px),30.00% calc(100% - 5px),28.75% calc(100% - 0px),27.50% calc(100% - 2px),26.25% calc(100% - 7px),25.00% calc(100% - 8px),23.75% calc(100% - 4px),22.50% calc(100% - 7px),21.25% calc(100% - 6px),20.00% calc(100% - 5px),18.75% calc(100% - 2px),17.50% calc(100% - 2px),16.25% calc(100% - 3px),15.00% calc(100% - 5px),13.75% calc(100% - 7px),12.50% calc(100% - 1px),11.25% calc(100% - 1px),10.00% calc(100% - 5px),8.75% calc(100% - 4px),7.50% calc(100% - 4px),6.25% calc(100% - 6px),5.00% calc(100% - 5px),3.75% calc(100% - 0px),2.50% calc(100% - 7px),1.25% calc(100% - 0px),0.00% calc(100% - 2px));
+  background:var(--noise),repeating-linear-gradient(0deg,transparent 0 27px,rgba(140,150,165,.22) 27px 28px),#f1eadf}
+.notebook::before{content:"";position:absolute;left:8px;top:34px;bottom:24px;width:18px;
+  background:radial-gradient(circle,#ece5d8 0 4px,#a79d8e 5px 6px,transparent 7px) 0 0/18px 48px repeat-y}
+.notebook .wrap{padding-left:22px}
 .hand{font:700 1.7rem/1 var(--hand);color:var(--red)}
-.notebook h2{font:400 clamp(2rem,4.6vw,3.3rem)/1.05 var(--serif);margin:4px 0 10px}
-.notebook .sub{font-size:1.1rem;color:#3a3530}
+.notebook .hand{text-align:left;transform:rotate(-3deg);transform-origin:left;margin:0 0 2px max(0px,calc(50% - 330px))}
+.notebook h2{font:400 clamp(2rem,4.6vw,3.3rem)/1.05 var(--serif);margin:0 0 8px}
+.notebook .sub{font-size:1.05rem;color:#2c2824}
 .center{text-align:center}
-.memories{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:32px}
+.notebook .wrap,.seasons .wrap{max-width:980px}
+.notebook .sub,.seasons .sub,.season p{font-family:var(--serif)}
+.crest{position:absolute;right:3%;top:18px;width:54px;height:auto;transform:rotate(9deg);filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.memories{margin-top:20px;padding:4px 2px 22px}
 .memory{position:relative}
-.memory .ph{aspect-ratio:4/3;border-radius:2px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
-.memory figcaption{position:absolute;left:50%;bottom:-16px;transform:translateX(-50%) rotate(-1.5deg);
-  background:#f8f3ea;padding:8px 18px;font:400 1.1rem/1.2 var(--serif);white-space:nowrap;box-shadow:0 3px 8px rgba(0,0,0,.2)}
-.memory:nth-child(2) figcaption{transform:translateX(-50%) rotate(1deg)}
+.memory .ph{aspect-ratio:3/2.15;box-shadow:0 4px 10px rgba(0,0,0,.28)}
+.memory:nth-child(3n+1) .ph{transform:rotate(-.6deg)}
+.memory:nth-child(3n) .ph{transform:rotate(.6deg)}
+.memory figcaption{position:absolute;left:50%;bottom:-14px;z-index:3;transform:translateX(-50%) rotate(-1.5deg);
+  background:#f4eee3;padding:5px 12px;font:400 clamp(.8rem,2.2vw,1.05rem)/1.2 var(--serif);white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.22)}
+.memory:nth-child(3n+2) figcaption{transform:translateX(-50%) rotate(1deg)}
 
 /* ---------- temporadas ---------- */
-.seasons{padding:64px 0 72px;background:#0d0d0d radial-gradient(ellipse at top,#2a0a0f 0%,transparent 60%)}
+.seasons{padding:44px 0 46px;margin-top:-18px;
+  background:var(--noise),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 3px,transparent 3px 11px,rgba(0,0,0,.35) 11px 13px,transparent 13px 23px),
+    radial-gradient(ellipse at 50% 0,#211d1c 0%,#0c0b0b 70%)}
 .seasons h2,.cast h2{font:400 clamp(2rem,4.6vw,3.3rem)/1.05 var(--serif)}
-.seasons .sub{color:#e9e1d6;font-size:1.1rem;margin-top:8px}
-.season-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-.season{border:1px solid #6a3a2a;border-radius:10px;overflow:hidden;background:#141111;text-align:center;padding-bottom:22px}
-.season .ph{aspect-ratio:4/3.3}
-.season .ph::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#141111 0%,transparent 45%)}
-.season .tag{display:inline-block;margin-top:-26px;position:relative;z-index:3;transform:rotate(-2deg)}
-.season .tag img{height:34px;width:auto;display:block;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
-.season h3{font:400 1.9rem/1.1 var(--serif);margin-top:14px}
+.seasons .sub{color:#e9e1d6;font-size:1.05rem;margin-top:6px}
+.season-grid{margin-top:22px}
+.season{border:1px solid #7b4a36;border-radius:8px;overflow:hidden;background:rgba(14,11,11,.9);text-align:center;padding-bottom:16px}
+.season .ph{aspect-ratio:4/3.1}
+.season .ph::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#0e0b0b 0%,transparent 40%)}
+.season .tag{display:inline-block;margin-top:-24px;position:relative;z-index:3;transform:rotate(-2deg)}
+.season .tag img{height:32px;width:auto;display:block;filter:drop-shadow(0 2px 4px rgba(0,0,0,.4))}
+.season h3{font:400 1.45rem/1.1 var(--serif);text-transform:uppercase;letter-spacing:.01em;margin-top:10px}
 .season h3 sup{font-size:.55em}
-.season p{color:#e9e1d6;margin:4px 0 14px}
+.season p{color:#e9e1d6;font-size:.95rem;margin:2px 0 10px}
+.season .pill{border-color:rgba(255,255,255,.85);padding:3px 16px;font-size:.75rem}
 
 /* ---------- elenco ---------- */
-.cast{background:var(--red-dark) radial-gradient(ellipse at center,#c4142a 0%,#7a0b17 80%);padding:56px 0 64px;position:relative}
+.cast{background:var(--noise),radial-gradient(ellipse at center,#c4142a 0%,#7a0b17 80%);padding:56px 0 64px;position:relative;margin:-2px 6px 0;
+  clip-path:polygon(0.00% 1px,1.25% 3px,2.50% 2px,3.75% 4px,5.00% 0px,6.25% 3px,7.50% 5px,8.75% 3px,10.00% 5px,11.25% 3px,12.50% 2px,13.75% 6px,15.00% 4px,16.25% 7px,17.50% 6px,18.75% 3px,20.00% 0px,21.25% 3px,22.50% 0px,23.75% 2px,25.00% 6px,26.25% 7px,27.50% 1px,28.75% 1px,30.00% 5px,31.25% 1px,32.50% 6px,33.75% 5px,35.00% 3px,36.25% 8px,37.50% 8px,38.75% 3px,40.00% 1px,41.25% 7px,42.50% 1px,43.75% 6px,45.00% 7px,46.25% 8px,47.50% 0px,48.75% 0px,50.00% 4px,51.25% 4px,52.50% 2px,53.75% 7px,55.00% 8px,56.25% 3px,57.50% 6px,58.75% 2px,60.00% 6px,61.25% 2px,62.50% 6px,63.75% 3px,65.00% 1px,66.25% 6px,67.50% 8px,68.75% 5px,70.00% 3px,71.25% 8px,72.50% 6px,73.75% 5px,75.00% 3px,76.25% 8px,77.50% 3px,78.75% 3px,80.00% 1px,81.25% 2px,82.50% 4px,83.75% 3px,85.00% 3px,86.25% 3px,87.50% 7px,88.75% 0px,90.00% 4px,91.25% 6px,92.50% 2px,93.75% 3px,95.00% 2px,96.25% 3px,97.50% 0px,98.75% 7px,100.00% 3px,100% 100%,0 100%)}
 .cast .sub{font:500 1.15rem var(--sans);margin-top:6px;color:#ffe9ea}
 .polaroids{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:32px}
 .polaroid{background:#f4efe6;padding:8px 8px 34px;box-shadow:0 8px 20px rgba(0,0,0,.35);position:relative;color:var(--ink)}
@@ -154,14 +174,17 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
 /* ---------- responsivo ---------- */
 @media (max-width:900px){
   header nav{display:none}
-  .memories,.season-grid{grid-template-columns:1fr;gap:34px}
-  .season-grid{gap:18px}
   .polaroids{grid-template-columns:repeat(3,1fr);gap:22px 14px}
   .side-hand{display:none}
   summary{grid-template-columns:1fr auto}
   summary .a{grid-column:1;grid-row:2}
   summary::after{grid-column:2;grid-row:1}
-  .notebook::before{display:none}
+}
+@media (max-width:600px){
+  .carousel>*{flex-basis:78%}
+  .star-l,.star-t{display:none}
+  .crest{width:40px;top:12px;right:4%}
+  .notebook .hand{font-size:1.45rem}
 }
 @media (max-width:480px){
   .box{padding:26px 20px}
@@ -192,36 +215,37 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
   <!-- HERO -->
   <section class="hero">
     <h1><img class="hero-banner" src="img/banner.jpg" width="941" height="1672" alt="Rebelde. A novela que marcou uma geração. Seu coração ainda é Rebelde. Reviva os romances, as músicas e cada emoção de Elite Way School. Novela completa, dublada."></h1>
-    <div class="wrap hero-cta">
-      <p class="price"><span class="price-label">As 3 temporadas por</span><span class="price-amount">R$ 19,90</span></p>
-      <a class="btn" href="#destaque">Quero reviver essa história</a>
-    </div>
   </section>
 
   <!-- MEMÓRIAS -->
-  <div class="torn-top"></div>
   <section class="notebook">
-    <svg class="star" style="right:6%;top:30px;color:var(--red)"><use href="#star"/></svg>
-    <svg class="star" style="left:5%;top:90px;color:#333"><use href="#star"/></svg>
+    <svg class="star star-l" style="left:7%;top:62px;width:40px;height:40px;color:#2a2a2a"><use href="#star"/></svg>
+    <svg class="star star-t" style="right:13%;top:26px;width:30px;height:30px;color:#2a2a2a"><use href="#star"/></svg>
+    <svg class="star" style="right:2%;top:84px;width:34px;height:34px;color:var(--red)"><use href="#star"/></svg>
+    <svg class="crest" viewBox="0 0 60 70" aria-hidden="true">
+      <defs><clipPath id="crest-in"><path d="M8 8h44v24c0 15-10 24-22 29C18 56 8 47 8 32z"/></clipPath></defs>
+      <path d="M4 4h52v28c0 18-12 28-26 34C16 60 4 50 4 32z" fill="#fff" stroke="#b3121f" stroke-width="3"/>
+      <g clip-path="url(#crest-in)"><rect x="0" y="0" width="30" height="34" fill="#c4142a"/><rect x="30" y="0" width="30" height="34" fill="#1d3f8f"/><rect x="0" y="34" width="30" height="40" fill="#1d3f8f"/><rect x="30" y="34" width="30" height="40" fill="#c4142a"/></g>
+      <g fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="15" text-anchor="middle"><text x="19" y="27">E</text><text x="41" y="27">W</text><text x="30" y="52">W</text></g>
+    </svg>
     <div class="wrap center">
       <p class="hand">É impossível não lembrar...</p>
-      <h2>Você lembra da primeira vez?</h2>
+      <h2>Você lembra da <span class="mark">primeira<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> vez?</h2>
       <p class="sub">As brigas de Mía e Roberta. Os romances. As músicas que você ainda sabe cantar.</p>
-      <div class="memories">
+      <div class="memories carousel">
         <figure class="memory"><div class="ph"><img src="img/romances.jpg" alt="" onerror="this.remove()"><span>img/romances.jpg</span></div><figcaption>Romances inesquecíveis</figcaption></figure>
         <figure class="memory"><div class="ph"><img src="img/amizades.jpg" alt="" onerror="this.remove()"><span>img/amizades.jpg</span></div><figcaption>Amizades e rivalidades</figcaption></figure>
         <figure class="memory"><div class="ph"><img src="img/musicas.jpg" alt="" onerror="this.remove()"><span>img/musicas.jpg</span></div><figcaption>Músicas que marcaram</figcaption></figure>
       </div>
     </div>
   </section>
-  <div class="torn-bottom"></div>
 
   <!-- TEMPORADAS -->
   <section class="seasons" id="temporadas">
     <div class="wrap center">
-      <h2>A história completa. Do começo ao fim.</h2>
+      <h2>A história completa. Do <span class="mark">começo<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> ao fim.</h2>
       <p class="sub">Suas 3 temporadas reunidas em um só lugar.</p>
-      <div class="season-grid">
+      <div class="season-grid carousel">
         <article class="season">
           <div class="ph"><img src="img/temporada1.jpg" alt="" onerror="this.remove()"><span>img/temporada1.jpg</span></div>
           <span class="tag"><img src="img/logo.png" alt="Rebelde"></span>
