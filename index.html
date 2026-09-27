@@ -68,10 +68,12 @@ header nav a:hover{color:var(--red)}
 /* ---------- hero ---------- */
 .hero{background:#0d0d0d;text-align:center}
 .hero-inner{position:relative;max-width:560px;margin:0 auto}
+.hero-media{position:relative;aspect-ratio:941/1545;overflow:hidden}
+.hero-media::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3%;background:linear-gradient(transparent,#0d0d0d)}
 .hero-banner{width:100%;height:auto;margin:0 auto}
-.btn.hero-cta{position:absolute;left:50%;top:92.6%;z-index:3;transform:translate(-50%,-50%);white-space:nowrap;width:auto;
-  font-size:clamp(.72rem,2.6vw,.95rem);padding:clamp(9px,2.4vw,14px) clamp(16px,5vw,28px)}
-.btn.hero-cta:hover{transform:translate(-50%,calc(-50% - 2px))}
+.hero-cta-wrap{padding:4px 16px calc(min(560px,100vw) * .02 + 36px);background:#0d0d0d}
+.btn.hero-cta{width:100%;max-width:460px;justify-content:center;font-size:clamp(1.1rem,4.6vw,1.35rem);
+  padding:clamp(18px,4.6vw,22px) 20px;letter-spacing:.07em}
 .kicker{font:600 .9rem/1.3 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:#e9e1d6;margin-bottom:12px}
 .price{display:block;margin:18px 0 22px}
 .price-label{display:block;font:600 1rem/1.3 var(--sans);margin-bottom:4px}
@@ -284,8 +286,8 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <h1><img class="hero-banner" src="img/banner.jpg" width="941" height="1672" alt="Rebelde. A novela que marcou uma geração. Seu coração ainda é Rebelde. Reviva os romances, as músicas e cada emoção de Elite Way School. Novela completa, dublada."></h1>
-      <a class="btn hero-cta" href="#destaque">Quero meu acesso agora</a>
+      <div class="hero-media"><h1><img class="hero-banner" src="img/banner.jpg" width="941" height="1672" alt="Rebelde. A novela que marcou uma geração. Seu coração ainda é Rebelde. Reviva os romances, as músicas e cada emoção de Elite Way School. Novela completa, dublada."></h1></div>
+      <div class="hero-cta-wrap"><a class="btn hero-cta" href="#destaque">Quero meu acesso agora</a></div>
     </div>
   </section>
 
