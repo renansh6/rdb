@@ -30,7 +30,7 @@ a{color:inherit;text-decoration:none}
 /* ---------- placeholders de imagem ---------- */
 .ph{position:relative;overflow:hidden;background:
   linear-gradient(135deg,#3a0a10,#1a1a1a 60%,#5a0d17);}
-.ph img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1}
+.ph img,.ph video{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;display:block}
 .ph span{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:8px;
   font:500 .8rem/1.3 var(--sans);color:rgba(255,255,255,.55);letter-spacing:.02em}
 
@@ -233,7 +233,7 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
       <h2>Você lembra da <span class="mark">primeira<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> vez?</h2>
       <p class="sub">As brigas de Mía e Roberta. Os romances. As músicas que você ainda sabe cantar.</p>
       <div class="memories carousel">
-        <figure class="memory"><div class="ph"><img src="img/romances.jpg" alt="" onerror="this.remove()"><span>img/romances.jpg</span></div><figcaption>Romances inesquecíveis</figcaption></figure>
+        <figure class="memory"><div class="ph"><video src="img/casal.mp4" poster="img/casal.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video></div><figcaption>Romances inesquecíveis</figcaption></figure>
         <figure class="memory"><div class="ph"><img src="img/amizades.jpg" alt="" onerror="this.remove()"><span>img/amizades.jpg</span></div><figcaption>Amizades e rivalidades</figcaption></figure>
         <figure class="memory"><div class="ph"><img src="img/musicas.jpg" alt="" onerror="this.remove()"><span>img/musicas.jpg</span></div><figcaption>Músicas que marcaram</figcaption></figure>
       </div>
