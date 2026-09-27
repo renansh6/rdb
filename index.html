@@ -175,24 +175,62 @@ header nav a:hover{color:var(--red)}
 .side-hand{position:absolute;right:4%;top:50%;transform:translateY(-50%) rotate(-8deg);z-index:3;
   font:700 2rem/1.05 var(--hand);color:rgba(255,255,255,.55);text-align:center}
 
+/* ---------- planos ---------- */
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:22px;justify-content:center;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;align-items:center;background:var(--paper);color:var(--ink);
+  border:3px solid #d8cdbd;border-radius:8px;padding:30px 24px 26px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.plan.featured{border-color:var(--red);outline:3px solid #f3ece0}
+.plan .badge{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;
+  font:700 .8rem/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:999px;white-space:nowrap}
+.plan-name{font:700 .85rem/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;color:#6b6259}
+.plan h3{font:400 clamp(1.5rem,3vw,1.9rem)/1.1 var(--serif);margin-top:8px}
+.plan .checks{margin:16px 0 8px}
+.plan .price{margin:10px 0 20px}
+.plan .btn{margin-top:auto;width:100%;justify-content:center;font-size:.95rem;padding:16px 14px}
+.btn-alt{background:none;color:var(--red);border:2px solid var(--red);box-shadow:none}
+.btn-alt::after{border-left-color:var(--red)}
+.btn-alt:hover{background:var(--red);color:#fff;box-shadow:0 10px 24px rgba(210,22,43,.35)}
+.btn-alt:hover::after{border-left-color:#fff}
+
 /* ---------- FAQ ---------- */
 .faq{background:var(--paper);color:var(--ink);padding:24px 0 64px}
 .faq h2{font:400 clamp(2rem,4.4vw,3rem)/1.1 var(--serif);text-align:center;margin-bottom:28px}
-.faq-list{max-width:900px;margin:0 auto;display:grid;gap:12px}
+.faq-list{max-width:760px;margin:0 auto;display:grid;gap:12px}
 details{background:#fbf8f2;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
-summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 1.4fr auto;gap:16px;align-items:center;padding:16px 20px;font-weight:600}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 20px;font:600 1.05rem/1.35 var(--sans)}
 summary::-webkit-details-marker{display:none}
-summary .a{font-weight:400;color:#3a3530}
-summary::after{content:"";width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--red);border-bottom:2px solid var(--red);
+  transform:rotate(45deg);transition:transform .2s}
 details[open] summary::after{transform:rotate(-135deg)}
 details .more{padding:0 20px 18px;color:#3a3530}
+.torn-bottom{height:26px;background:var(--paper);clip-path:polygon(0 0,100% 0,100% 50%,95% 85%,89% 45%,83% 90%,77% 40%,71% 80%,65% 45%,59% 90%,53% 40%,47% 85%,41% 45%,35% 90%,29% 40%,23% 85%,17% 50%,11% 90%,5% 40%,0 80%)}
+
+/* ---------- chamada final ---------- */
+.final{position:relative;overflow:hidden;text-align:center;padding:56px 0 72px;
+  background:radial-gradient(ellipse 520px 360px at 15% 20%,rgba(226,40,58,.45) 0%,transparent 70%),
+    radial-gradient(ellipse 520px 360px at 85% 85%,rgba(226,40,58,.45) 0%,transparent 70%),#140404}
+.final .wrap{position:relative;z-index:2}
+.final h2{font:400 clamp(2.2rem,5.4vw,3.8rem)/1.02 var(--serif);max-width:22ch;margin:6px auto 0}
+.final h2 em{font-style:normal;color:var(--red)}
+.final .sub{max-width:34ch;margin:16px auto 30px;font:400 1.15rem/1.45 var(--serif);color:#e9e1d6}
+.final-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.final .btn-alt{color:#fff;border-color:rgba(255,255,255,.8)}
+.final .btn-alt::after{border-left-color:#fff}
+.final small{display:block;margin-top:18px;color:var(--muted);font-size:.85rem}
 
 /* ---------- footer ---------- */
-footer{background:#0d0d0d;text-align:center;padding:56px 0 48px}
+footer{background:#0d0d0d;text-align:center;padding:56px 0 40px;border-top:1px solid #231c1c}
 footer .logo{display:inline-block;transform:rotate(-2deg)}
 footer .logo img{height:52px;width:auto}
 footer p{font:400 1.5rem/1.3 var(--serif);margin-top:18px}
-footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;letter-spacing:.06em}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin-top:26px;font:500 .95rem var(--sans)}
+.foot-links a{color:#e9e1d6}
+.foot-links a:hover,.social a:hover{color:var(--red)}
+.social{display:flex;justify-content:center;gap:14px;margin-top:22px}
+.social a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid #3a3030;color:#e9e1d6}
+.social svg{width:20px;height:20px}
+footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;letter-spacing:.06em;line-height:1.7}
 
 .star{position:absolute;width:44px;height:44px;opacity:.8;pointer-events:none}
 
@@ -201,11 +239,11 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
   header nav{display:none}
   .polaroids{grid-template-columns:repeat(3,1fr);gap:22px 14px}
   .side-hand{display:none}
-  summary{grid-template-columns:1fr auto}
-  summary .a{grid-column:1;grid-row:2}
-  summary::after{grid-column:2;grid-row:1}
 }
 @media (max-width:600px){
+  .plans{grid-template-columns:minmax(0,420px);gap:30px}
+  .final-btns .btn{width:100%;justify-content:center}
+  .final .star{display:none}
   .marquee-track img{height:320px;margin-right:12px}
   .marquee-track{animation-duration:34s}
   .carousel>*{flex-basis:78%}
@@ -341,30 +379,67 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
     <p class="side-hand" aria-hidden="true">Música<br>amizade<br>amor<br>sempre ♡</p>
     <div class="wrap">
       <p class="kicker">Sua próxima maratona começa aqui</p>
-      <div class="box">
-        <h2>Rebelde — Novela completa</h2>
-        <ul class="checks">
-          <li>3 temporadas reunidas</li>
-          <li>Novela dublada em português</li>
-          <li>Uma história para reviver</li>
-        </ul>
-        <p class="price"><span class="price-label">Tudo isso por</span><span class="price-amount">R$ 19,90</span></p>
-        <!-- Troque o href pelo link de onde assistir -->
-        <a class="btn" href="#">Quero assistir Rebelde</a>
+      <div class="plans">
+        <article class="plan">
+          <span class="plan-name">Plano econômico</span>
+          <h3>1ª Temporada</h3>
+          <ul class="checks">
+            <li>A 1ª temporada completa</li>
+            <li>Dublada em português</li>
+            <li>Acesso vitalício</li>
+          </ul>
+          <p class="price"><span class="price-amount">R$ 12,90</span></p>
+          <!-- troque o href pelo link do checkout do plano econômico -->
+          <a class="btn btn-alt" href="#">Quero o plano R$ 12,90</a>
+        </article>
+        <article class="plan featured">
+          <span class="badge">Novela completa</span>
+          <span class="plan-name">Plano premium</span>
+          <h3>As 3 Temporadas</h3>
+          <ul class="checks">
+            <li>440 episódios completos</li>
+            <li>Dublada em português</li>
+            <li>Acesso vitalício</li>
+          </ul>
+          <p class="price"><span class="price-amount">R$ 24,90</span></p>
+          <!-- troque o href pelo link do checkout do plano premium -->
+          <a class="btn" href="#">Quero tudo por R$ 24,90</a>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
   <div class="torn-top"></div>
-  <section class="faq">
+  <section class="faq" id="perguntas">
     <div class="wrap">
-      <h2>Antes de dar o play</h2>
+      <h2>Perguntas frequentes</h2>
       <div class="faq-list">
-        <details><summary>É a versão mexicana original?<span class="a">Sim, a novela com Mía, Roberta e a turma do <i>Elite Way School</i>.</span></summary><p class="more">Adicione aqui um texto mais completo, se quiser.</p></details>
-        <details><summary>São as 3 temporadas?<span class="a">Sim, a história completa.</span></summary><p class="more">Adicione aqui um texto mais completo, se quiser.</p></details>
-        <details><summary>A novela é dublada?<span class="a">Sim, dublada em português.</span></summary><p class="more">Adicione aqui um texto mais completo, se quiser.</p></details>
+        <details><summary>E se eu não tiver tempo?</summary><p class="more">Sem problema: o acesso é vitalício. Você assiste no seu ritmo, um episódio antes de dormir ou uma maratona no fim de semana, sem prazo para terminar.</p></details>
+        <details><summary>Nunca assisti Rebelde. Serve para mim?</summary><p class="more">Serve, sim. A história começa do primeiro capítulo, com a chegada dos alunos ao <i>Elite Way School</i>, então dá para acompanhar tudo desde o início, mesmo sem conhecer a novela.</p></details>
+        <details><summary>Como eu recebo o acesso?</summary><p class="more">Assim que o pagamento é confirmado, você recebe o link de acesso no seu e-mail. Se não encontrar, confira também a caixa de spam e a aba Promoções.</p></details>
+        <details><summary>Qual a diferença entre os planos?</summary><p class="more">O plano econômico (R$ 12,90) tem a 1ª temporada completa. O plano premium (R$ 24,90) tem as 3 temporadas, com os 440 episódios, do começo ao fim da história.</p></details>
+        <details><summary>A novela é dublada?</summary><p class="more">Sim, os dois planos são dublados em português.</p></details>
+        <details><summary>É a versão mexicana original?</summary><p class="more">Sim, é a novela mexicana com Mía, Roberta, Lupita, Miguel, Diego, Giovanni e toda a turma do <i>Elite Way School</i>.</p></details>
       </div>
+    </div>
+  </section>
+  <div class="torn-bottom"></div>
+
+  <!-- CHAMADA FINAL -->
+  <section class="final">
+    <svg class="star" style="left:6%;top:48px;color:#ffd0d4"><use href="#star"/></svg>
+    <svg class="star" style="right:7%;bottom:60px;color:#ffd0d4;width:56px;height:56px"><use href="#star"/></svg>
+    <div class="wrap">
+      <p class="hand">E aí, vai deixar pra depois?</p>
+      <h2>Tem histórias que a gente nunca esquece. <em>Essa é a sua.</em></h2>
+      <p class="sub">Volte para o Elite Way School e sinta tudo de novo: cada música, cada briga, cada primeiro amor.</p>
+      <div class="final-btns">
+        <!-- troque os hrefs pelos links do checkout -->
+        <a class="btn" href="#">Quero tudo por R$ 24,90</a>
+        <a class="btn btn-alt" href="#">Quero o plano R$ 12,90</a>
+      </div>
+      <small>Acesso vitalício • Link enviado por e-mail</small>
     </div>
   </section>
 </main>
@@ -372,7 +447,18 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
 <footer>
   <span class="logo"><img src="img/logo.png" alt="Rebelde"></span>
   <p>Algumas histórias nunca saem da gente.</p>
-  <small>Página de fã • Projeto independente, sem vínculo com os detentores da obra</small>
+  <!-- troque os hrefs pelos links reais -->
+  <nav class="foot-links" aria-label="Links institucionais">
+    <a href="#">Política de privacidade</a>
+    <a href="#">Termos de uso</a>
+    <a href="#">Contato</a>
+  </nav>
+  <div class="social">
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.4 2.2 1.8 3.7 4 3.9v3.2c-1.5 0-2.8-.4-4-1.2v6.3c0 3.4-2.6 5.8-5.8 5.8S5 18.6 5 15.3c0-3.4 2.9-6 6.4-5.6v3.3c-1.6-.4-3.1.7-3.1 2.3 0 1.4 1.1 2.4 2.5 2.4s2.5-1 2.5-2.6V3h3.3z"/></svg></a>
+    <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.4-.7-2-1.3-.5-.5-1-1.1-1.3-1.7-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.6.6-.9 1.4-.9 2.2.1 1 .5 1.9 1.1 2.7 1.1 1.6 2.5 2.9 4.2 3.7.5.2.9.4 1.4.5.5.2 1.1.2 1.6.1.6-.1 1.1-.5 1.5-1 .2-.4.2-.8.2-1.2l-.3-.2z"/></svg></a>
+  </div>
+  <small>© 2026 • Página de fã • Projeto independente, sem vínculo com os detentores da obra</small>
 </footer>
 
 <script>
