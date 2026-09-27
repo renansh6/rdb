@@ -190,6 +190,13 @@ header nav a:hover{color:var(--red)}
 .side-hand{position:absolute;right:4%;top:50%;transform:translateY(-50%) rotate(-8deg);z-index:3;
   font:700 2rem/1.05 var(--hand);color:rgba(255,255,255,.55);text-align:center}
 
+/* ---------- vsl ---------- */
+.vsl{text-align:center;margin-bottom:44px}
+.vsl .hand{transform:rotate(-2deg)}
+.vsl h2{font:400 clamp(2rem,4.6vw,3.2rem)/1.05 var(--serif);margin-top:4px}
+.vsl .sub{max-width:40ch;margin:10px auto 26px;font:400 1.1rem/1.45 var(--serif);color:#e9e1d6}
+.vsl-frame{width:min(320px,74vw);aspect-ratio:9/16;margin:0 auto;border:8px solid #1b1b1b;border-radius:34px;
+  box-shadow:0 0 0 2px #3a3030,0 24px 60px rgba(0,0,0,.6),0 0 60px rgba(210,22,43,.25)}
 /* ---------- planos ---------- */
 .plans{display:grid;grid-template-columns:repeat(2,minmax(0,320px));gap:22px;justify-content:center;align-items:stretch}
 .plan{position:relative;display:flex;flex-direction:column;align-items:center;background:var(--paper);color:var(--ink);
@@ -397,6 +404,12 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
     <div class="stage-bg"></div>
     <p class="side-hand" aria-hidden="true">Música<br>amizade<br>amor<br>sempre ♡</p>
     <div class="wrap">
+      <div class="vsl">
+        <p class="hand">Sem mistério...</p>
+        <h2>Veja por dentro como você vai assistir</h2>
+        <p class="sub">Todos os capítulos organizados, com o resumo de cada um. É só escolher e dar o play.</p>
+        <div class="ph vsl-frame"><video src="img/vsl.mp4" poster="img/vsl.jpg" muted loop playsinline preload="none" aria-label="Gravação de tela mostrando a lista de capítulos de Rebelde"></video></div>
+      </div>
       <p class="kicker">Sua próxima maratona começa aqui</p>
       <div class="plans">
         <article class="plan">
