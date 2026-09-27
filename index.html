@@ -140,6 +140,20 @@ header nav a:hover{color:var(--red)}
 .polaroid .ph{aspect-ratio:4/5}
 .polaroid b{position:absolute;left:0;right:0;bottom:6px;text-align:center;font:400 1.1rem var(--serif)}
 
+/* ---------- depoimentos ---------- */
+.reviews{position:relative;padding:52px 0 60px;margin:-4px 0 0;text-align:center;overflow:hidden;
+  clip-path:polygon(0.00% 1px,1.25% 3px,2.50% 2px,3.75% 4px,5.00% 0px,6.25% 3px,7.50% 5px,8.75% 3px,10.00% 5px,11.25% 3px,12.50% 2px,13.75% 6px,15.00% 4px,16.25% 7px,17.50% 6px,18.75% 3px,20.00% 0px,21.25% 3px,22.50% 0px,23.75% 2px,25.00% 6px,26.25% 7px,27.50% 1px,28.75% 1px,30.00% 5px,31.25% 1px,32.50% 6px,33.75% 5px,35.00% 3px,36.25% 8px,37.50% 8px,38.75% 3px,40.00% 1px,41.25% 7px,42.50% 1px,43.75% 6px,45.00% 7px,46.25% 8px,47.50% 0px,48.75% 0px,50.00% 4px,51.25% 4px,52.50% 2px,53.75% 7px,55.00% 8px,56.25% 3px,57.50% 6px,58.75% 2px,60.00% 6px,61.25% 2px,62.50% 6px,63.75% 3px,65.00% 1px,66.25% 6px,67.50% 8px,68.75% 5px,70.00% 3px,71.25% 8px,72.50% 6px,73.75% 5px,75.00% 3px,76.25% 8px,77.50% 3px,78.75% 3px,80.00% 1px,81.25% 2px,82.50% 4px,83.75% 3px,85.00% 3px,86.25% 3px,87.50% 7px,88.75% 0px,90.00% 4px,91.25% 6px,92.50% 2px,93.75% 3px,95.00% 2px,96.25% 3px,97.50% 0px,98.75% 7px,100.00% 3px,100% 100%,0 100%);
+  background:var(--noise),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 3px,transparent 3px 11px,rgba(0,0,0,.35) 11px 13px,transparent 13px 23px),
+    radial-gradient(ellipse at 50% 0,#211d1c 0%,#0c0b0b 70%)}
+.reviews h2{font:400 clamp(2rem,4.6vw,3.3rem)/1.05 var(--serif);margin-top:4px}
+.reviews .hand{transform:rotate(-2deg)}
+.marquee{overflow:hidden;margin-top:28px;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.marquee-track{display:flex;width:max-content;animation:marquee 45s linear infinite}
+.marquee-track img{flex:none;height:420px;width:auto;margin-right:18px;border-radius:12px;box-shadow:0 10px 26px rgba(0,0,0,.5)}
+@keyframes marquee{to{transform:translateX(-33.3333%)}}
+
 /* ---------- destaque ---------- */
 .stage{position:relative;padding:48px 0 64px;overflow:hidden;background:#0d0d0d}
 .stage-bg{position:absolute;inset:0;
@@ -192,6 +206,8 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
   summary::after{grid-column:2;grid-row:1}
 }
 @media (max-width:600px){
+  .marquee-track img{height:320px;margin-right:12px}
+  .marquee-track{animation-duration:34s}
   .carousel>*{flex-basis:78%}
   .star-l,.star-t{display:none}
   .crest{width:40px;top:12px;right:4%}
@@ -288,6 +304,33 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
         <div class="polaroid"><div class="ph"><img src="img/miguel.jpg" alt="Miguel" onerror="this.remove()"><span>miguel.jpg</span></div><b>Miguel</b></div>
         <div class="polaroid"><div class="ph"><img src="img/diego.jpg" alt="Diego" onerror="this.remove()"><span>diego.jpg</span></div><b>Diego</b></div>
         <div class="polaroid"><div class="ph"><img src="img/giovanni.jpg" alt="Giovanni" onerror="this.remove()"><span>giovanni.jpg</span></div><b>Giovanni</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="reviews" id="depoimentos">
+    <div class="wrap">
+      <p class="hand">Quem reviu, se apaixonou de novo...</p>
+      <h2>O que os fãs estão dizendo</h2>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <img src="img/dep1.jpg" width="840" height="840" loading="lazy"  alt="Comentário no Instagram de robtaques: Assistindo essa cena depois de adulto chega ser cômico kkkk parece aquelas cenas de novelas indiana, mas ainda amo meu rbd kkkk">
+        <img src="img/dep2.jpg" width="840" height="840" loading="lazy"  alt="Comentário no Instagram de germanda__: Gente tô assistindo novamente, e é uma mistura de nostalgia com vergonha alheia kkkk tem umas cenas que começo a dar risada, e o barulho dos sapatos então. Mesmo assim amor">
+        <img src="img/dep3.jpg" width="560" height="840" loading="lazy"  alt="Trecho de comentário no Instagram de jaqueline_reis2020 contando que, quando criança, só conseguia assistir Rebelde nas férias na casa dos avós">
+        <img src="img/dep4.jpg" width="472" height="840" loading="lazy"  alt="Conversa ilustrativa com comentário original do Instagram de _amandnery: Estou maratonando cada capítulo como se fosse a primeira vez">
+        <img src="img/dep5.jpg" width="472" height="840" loading="lazy"  alt="Conversa ilustrativa com comentário original do Instagram de jufranzen: Vou assistir pela terceira vez! Amo tanto que fiz até uma análise psicológica dos personagens no meu perfil">
+        <img src="img/dep1.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep2.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep3.jpg" width="560" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep4.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep5.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep1.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep2.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep3.jpg" width="560" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep4.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep5.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
       </div>
     </div>
   </section>
