@@ -244,9 +244,9 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
       <h2>Você lembra da <span class="mark">primeira<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> vez?</h2>
       <p class="sub">As brigas de Mía e Roberta. Os romances. As músicas que você ainda sabe cantar.</p>
       <div class="memories carousel">
-        <figure class="memory"><div class="ph"><video src="img/casal.mp4" poster="img/casal.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div><figcaption>Romances inesquecíveis</figcaption></figure>
-        <figure class="memory"><div class="ph"><img src="img/amizades.jpg" alt="" onerror="this.remove()"><span>img/amizades.jpg</span></div><figcaption>Amizades e rivalidades</figcaption></figure>
-        <figure class="memory"><div class="ph"><img src="img/musicas.jpg" alt="" onerror="this.remove()"><span>img/musicas.jpg</span></div><figcaption>Músicas que marcaram</figcaption></figure>
+        <figure class="memory"><div class="ph"><video src="img/casal2.mp4" poster="img/casal2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div><figcaption>Romances inesquecíveis</figcaption></figure>
+        <figure class="memory"><div class="ph"><video src="img/casal3.mp4" poster="img/casal3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div><figcaption>Amizades e rivalidades</figcaption></figure>
+        <figure class="memory"><div class="ph"><video src="img/casal4.mp4" poster="img/casal4.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div><figcaption>Músicas que marcaram</figcaption></figure>
       </div>
     </div>
   </section>
@@ -335,6 +335,8 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
 </footer>
 
 <script>
+var vids=[].slice.call(document.querySelectorAll(".ph video"));
+function muteOthers(cur){vids.forEach(function(o){if(o!==cur&&!o.muted){o.muted=true}})}
 document.querySelectorAll(".sound-ctl").forEach(function(c){
   var v=c.parentNode.querySelector("video"),b=c.querySelector(".sound"),r=c.querySelector(".vol"),last=1;
   function sync(){
@@ -345,16 +347,27 @@ document.querySelectorAll(".sound-ctl").forEach(function(c){
     b.setAttribute("aria-label",on?"Desativar som do vídeo":"Ativar som do vídeo");
   }
   b.addEventListener("click",function(){
-    if(v.muted||v.volume===0){v.volume=last;v.muted=false;v.play()}else{last=v.volume;v.muted=true}
+    if(v.muted||v.volume===0){v.volume=last;v.muted=false;muteOthers(v);v.play()}else{last=v.volume;v.muted=true}
     sync();
   });
   r.addEventListener("input",function(){
     var x=parseFloat(r.value);
-    v.volume=x;v.muted=x===0;if(x>0){last=x;v.play()}
+    v.volume=x;v.muted=x===0;if(x>0){last=x;muteOthers(v);v.play()}
     sync();
   });
   v.addEventListener("volumechange",sync);
 });
+// cada vídeo só carrega e toca quando o card está visível
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){v.preload="auto";var p=v.play();if(p&&p.catch)p.catch(function(){})}
+      else if(!v.paused){v.pause()}
+    });
+  },{threshold:.5});
+  vids.forEach(function(v){io.observe(v)});
+}else{vids.forEach(function(v){v.preload="auto";v.autoplay=true;v.play()})}
 </script>
 </body>
 </html>
