@@ -366,6 +366,23 @@ if("IntersectionObserver" in window){
   },{threshold:.5});
   vids.forEach(function(v){io.observe(v)});
 }else{vids.forEach(function(v){v.preload="auto";v.autoplay=true;v.play()})}
+// carrossel das temporadas passa sozinho; pausa enquanto a pessoa mexe nele
+document.querySelectorAll(".season-grid.carousel").forEach(function(c){
+  var how=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth";
+  var paused=false,t;
+  setInterval(function(){
+    if(paused||c.scrollWidth<=c.clientWidth+2)return;
+    var step=c.children[1].offsetLeft-c.children[0].offsetLeft;
+    if(c.scrollLeft+c.clientWidth>=c.scrollWidth-4)c.scrollTo({left:0,behavior:how});
+    else c.scrollBy({left:step,behavior:how});
+  },3000);
+  ["pointerdown","touchstart","mouseenter","focusin"].forEach(function(ev){
+    c.addEventListener(ev,function(){paused=true;clearTimeout(t)},{passive:true});
+  });
+  ["pointerup","touchend","mouseleave","focusout"].forEach(function(ev){
+    c.addEventListener(ev,function(){clearTimeout(t);t=setTimeout(function(){paused=false},4000)},{passive:true});
+  });
+});
 </script>
 </body>
 </html>
