@@ -55,20 +55,10 @@ header nav a:hover{color:var(--red)}
   padding:10px 18px;border-radius:6px}
 
 /* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;background:#0d0d0d}
-.hero-bg{position:absolute;inset:0 0 0 30%}
-.hero-bg::after{content:"";position:absolute;inset:0;z-index:2;
-  background:linear-gradient(90deg,#0d0d0d 0%,rgba(13,13,13,.85) 18%,rgba(13,13,13,0) 55%),
-             linear-gradient(0deg,#0d0d0d 0%,rgba(13,13,13,0) 25%)}
-.hero .wrap{position:relative;z-index:3;padding:72px 0 88px;min-height:620px;display:flex;flex-direction:column;justify-content:center}
-.hero-copy{max-width:460px}
+.hero{background:#0d0d0d;text-align:center}
+.hero-banner{width:100%;max-width:560px;height:auto;margin:0 auto}
+.hero-cta{padding:8px 0 56px}
 .kicker{font:600 .9rem/1.3 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:#e9e1d6;margin-bottom:12px}
-.hero h1{font:400 clamp(2.8rem,6.2vw,4.6rem)/.98 var(--serif);letter-spacing:-.01em}
-.hero h1 em{display:block;font-style:normal;color:var(--red);font-size:1.22em;position:relative;width:max-content}
-.scribble{position:absolute;left:0;bottom:-10px;width:100%;height:14px}
-.hero p.lead{margin:24px 0 16px;font-size:1.1rem;color:#e9e1d6;max-width:30ch}
-.hero .pill{color:#fff;margin-bottom:8px}
-.hero .btn{margin-top:4px}
 .price{display:block;margin:18px 0 22px}
 .price-label{display:block;font:600 1rem/1.3 var(--sans);margin-bottom:4px}
 .price-amount{font:400 clamp(2rem,4.2vw,2.7rem)/1 var(--serif);
@@ -164,9 +154,6 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
 /* ---------- responsivo ---------- */
 @media (max-width:900px){
   header nav{display:none}
-  .hero-bg{inset:0}
-  .hero-bg::after{background:linear-gradient(0deg,#0d0d0d 30%,rgba(13,13,13,.55) 65%,rgba(13,13,13,.2) 100%)}
-  .hero .wrap{min-height:auto;padding:300px 0 56px}
   .memories,.season-grid{grid-template-columns:1fr;gap:34px}
   .season-grid{gap:18px}
   .polaroids{grid-template-columns:repeat(3,1fr);gap:22px 14px}
@@ -204,21 +191,10 @@ footer small{display:block;margin-top:14px;color:var(--muted);font-size:.8rem;le
 <main id="topo">
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg ph"><img src="img/hero.jpg" alt="" onerror="this.remove()"><span>img/hero.jpg</span></div>
-    <svg class="star" style="left:3%;top:28px;color:#aaa;z-index:3"><use href="#star"/></svg>
-    <div class="wrap">
-      <div class="hero-copy">
-        <p class="kicker">A novela que marcou uma geração</p>
-        <h1>Seu coração ainda é
-          <em>Rebelde.
-            <svg class="scribble" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
-          </em>
-        </h1>
-        <p class="lead">Reviva os romances, as músicas e cada emoção de Elite Way School.</p>
-        <span class="pill">Novela completa • Dublada</span>
-        <p class="price"><span class="price-label">As 3 temporadas por</span><span class="price-amount">R$ 19,90</span></p>
-        <a class="btn" href="#destaque">Quero reviver essa história</a>
-      </div>
+    <h1><img class="hero-banner" src="img/banner.jpg" width="941" height="1672" alt="Rebelde. A novela que marcou uma geração. Seu coração ainda é Rebelde. Reviva os romances, as músicas e cada emoção de Elite Way School. Novela completa, dublada."></h1>
+    <div class="wrap hero-cta">
+      <p class="price"><span class="price-label">As 3 temporadas por</span><span class="price-amount">R$ 19,90</span></p>
+      <a class="btn" href="#destaque">Quero reviver essa história</a>
     </div>
   </section>
 
