@@ -587,6 +587,25 @@ document.querySelectorAll(".season-grid.carousel").forEach(function(c){
     c.addEventListener(ev,function(){clearTimeout(t);t=setTimeout(function(){paused=false},4000)},{passive:true});
   });
 });
+// Meta Pixel: InitiateCheckout ao clicar em um botão de compra
+// (espera um instante antes de ir pro checkout pra o evento não se perder na troca de página;
+//  se o pixel estiver bloqueado ou der erro, o botão funciona normalmente)
+document.querySelectorAll('a[href*="pay.lowify.com.br"]').forEach(function(a){
+  a.addEventListener("click",function(ev){
+    if(typeof fbq!=="function")return;
+    var premium=/L2dxxX/.test(a.href);
+    try{
+      fbq("track","InitiateCheckout",{
+        value:premium?19.90:9.90,currency:"BRL",
+        content_name:premium?"Plano premium - 3 temporadas":"Plano econômico - 1ª temporada",
+        content_ids:[premium?"L2dxxX":"OdQhrN"],content_type:"product",num_items:1
+      });
+    }catch(e){return}
+    if(ev.metaKey||ev.ctrlKey||ev.shiftKey||ev.button!==0||a.target==="_blank")return;
+    ev.preventDefault();
+    var url=a.href;setTimeout(function(){location.href=url},300);
+  });
+});
 </script>
 </body>
 </html>
