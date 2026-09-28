@@ -53,7 +53,7 @@ function convert(body, isTest) {
       phone: c.phone || null,
       document: c.document || null,
       country: "BR",
-      ip: c.ip || null,
+      ...(c.ip ? { ip: c.ip } : {}),
     },
     products: [{
       id: String(p.id != null ? p.id : "produto"),
