@@ -308,7 +308,7 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
     <div class="for">Por apenas</div>
     <div class="price"><small>R$</small>9,90</div>
     <!-- checkout do plano econômico (R$ 9,90); o clique abre o popup das 3 temporadas -->
-    <a class="cta cta-principal" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
+    <a class="cta cta-principal link_interno" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
     <div class="offer-secure">🔒 Compra 100% segura<br>❤️ 7 dias de garantia — risco zero</div>
   </section>
   <p class="cta-note">Esse é apenas um valor simbólico para nos ajudar a manter tudo no ar e com qualidade para você! ❤️</p>
@@ -409,7 +409,7 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
     <h3>Reviva Rebelde ainda hoje</h3>
     <div class="for">Por apenas</div>
     <div class="price"><small>R$</small>9,90</div>
-    <a class="cta cta-principal" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
+    <a class="cta cta-principal link_interno" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
     <div class="offer-secure">🔒 Compra 100% segura · ❤️ 7 dias de garantia incondicional</div>
   </section>
 
@@ -474,13 +474,11 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
   /* Checkout do plano econômico (R$ 9,90): é o destino dos botões da oferta. */
   const CHECKOUT_PRINCIPAL = "https://pay.lowify.com.br/checkout?product_id=OdQhrN";
 
-  /* A classe "link_interno" é reconhecida pelo próprio script da UTMify: com ela,
-     a UTMify DISPARA o InitiateCheckout no clique e NÃO navega sozinha. É isso que
-     deixa o botão abrir o popup sem perder o evento. (Mesmo esquema da LP da Barbie.) */
-  document.querySelectorAll('.cta-principal').forEach(a => {
-    a.href = CHECKOUT_PRINCIPAL;
-    a.classList.add('link_interno');
-  });
+  /* Os botões .cta-principal já vêm no HTML com o link de R$ 9,90 e a classe
+     "link_interno". Essa classe é reconhecida pelo próprio script da UTMify: com ela,
+     a UTMify DISPARA o InitiateCheckout no clique e NÃO navega sozinha — é isso que
+     deixa o botão abrir o popup sem perder o evento. Não regrave o href aqui: isso
+     apagaria as UTMs que a UTMify cola no link. */
 
   const upModal = document.getElementById('upModal');
   const openUp  = () => { upModal.classList.add('open'); document.body.style.overflow='hidden'; };
