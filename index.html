@@ -166,22 +166,17 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
     .price{font-size:50px}
   }
 
-  /* ---------- carrossel das capas ---------- */
-  .titulos-lead{font-size:11.5px;font-weight:700;color:#8a4a52;margin-bottom:7px;margin-top:12px}
-  .carrossel{
-    position:relative;overflow:hidden;margin:0 -14px;
-    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
-            mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
-  }
-  .trilho{display:flex;gap:8px;width:max-content;animation:desliza 30s linear infinite}
-  .carrossel:hover .trilho{animation-play-state:paused}
-  @keyframes desliza{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
-  @media (prefers-reduced-motion:reduce){ .trilho{animation:none} .carrossel{overflow-x:auto} }
-  .poster{
-    flex:0 0 auto;width:88px;aspect-ratio:2/3;border-radius:9px;overflow:hidden;
-    background:#FFE1E5;box-shadow:0 4px 12px rgba(210,22,43,.22);
-  }
-  .poster img{width:100%;height:100%;object-fit:cover;display:block}
+  /* ---------- banners das temporadas ---------- */
+  .titulos-lead{font-size:11.5px;font-weight:700;color:#8a4a52;margin-bottom:8px;margin-top:12px}
+  .temporadas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .temp{background:#fff;border:1px solid #F3D3D8;border-radius:10px;overflow:hidden;box-shadow:0 4px 12px rgba(210,22,43,.14)}
+  .temp-img{position:relative;aspect-ratio:800/620;background:#1a0a0d}
+  .temp-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .temp-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55) 0%,transparent 45%)}
+  .temp-img .temp-logo{position:absolute;left:50%;bottom:5px;z-index:1;width:62%;height:auto;transform:translateX(-50%) rotate(-2deg);object-fit:contain;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+  .temp figcaption{padding:6px 4px 8px;line-height:1.2}
+  .temp figcaption b{display:block;font-size:12px;font-weight:800;color:var(--ink)}
+  .temp figcaption span{display:inline-block;margin-top:4px;font-size:10px;font-weight:700;color:#fff;background:var(--pink);border-radius:20px;padding:2px 7px}
   .titulos{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
   .titulos span{font-size:11px;font-weight:700;color:#b3182c;background:#fff;
     border:1.2px solid #ffc9d0;border-radius:20px;padding:4px 9px;line-height:1.15;white-space:nowrap}
@@ -206,29 +201,20 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
     <div class="offer-tag">Oferta Exclusiva</div>
     <div class="offer-scarcity">🔥 Acesso vitalício — pague uma vez só</div>
     <h3>A novela completa de Rebelde, num lugar só</h3>
-    <div class="titulos-lead">Quem te espera no Elite Way School:</div>
-    <div class="carrossel" aria-label="Personagens e temporadas">
-      <div class="trilho">
-        <div class="poster"><img src="img/mia.jpg" alt="Mía" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/roberta.jpg" alt="Roberta" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/temporada1.jpg" alt="1ª temporada" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/miguel.jpg" alt="Miguel" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/diego.jpg" alt="Diego" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/temporada2.jpg" alt="2ª temporada" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/lupita.jpg" alt="Lupita" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/giovanni.jpg" alt="Giovanni" loading="lazy" decoding="async"></div>
-        <div class="poster"><img src="img/temporada3.jpg" alt="3ª temporada" loading="lazy" decoding="async"></div>
-        <!-- cópia que fecha o laço -->
-        <div class="poster" aria-hidden="true"><img src="img/mia.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/roberta.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/temporada1.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/miguel.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/diego.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/temporada2.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/lupita.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/giovanni.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="poster" aria-hidden="true"><img src="img/temporada3.jpg" alt="" loading="lazy" decoding="async"></div>
-      </div>
+    <div class="titulos-lead">As 3 temporadas completas:</div>
+    <div class="temporadas">
+      <figure class="temp">
+        <div class="temp-img"><img src="img/temporada1.jpg" alt="Elenco de Rebelde na 1ª temporada" width="800" height="620" loading="lazy" decoding="async"><img class="temp-logo" src="img/logo.png" alt=""></div>
+        <figcaption><b>1ª Temporada</b><span>215 episódios</span></figcaption>
+      </figure>
+      <figure class="temp">
+        <div class="temp-img"><img src="img/temporada2.jpg" alt="Elenco de Rebelde na 2ª temporada" width="800" height="620" loading="lazy" decoding="async"><img class="temp-logo" src="img/logo.png" alt=""></div>
+        <figcaption><b>2ª Temporada</b><span>120 episódios</span></figcaption>
+      </figure>
+      <figure class="temp">
+        <div class="temp-img"><img src="img/temporada3.jpg" alt="Elenco de Rebelde na 3ª temporada" width="800" height="620" loading="lazy" decoding="async"><img class="temp-logo" src="img/logo.png" alt=""></div>
+        <figcaption><b>3ª Temporada</b><span>105 episódios</span></figcaption>
+      </figure>
     </div>
     <div class="titulos" style="margin-top:9px"><span class="mais">3 temporadas · 440 episódios</span></div>
     <div class="for">Por apenas</div>
