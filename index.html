@@ -180,31 +180,31 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
 
   /* ---------- POPUP DE UPGRADE (3 temporadas por R$ 19,90) ---------- */
   .up-modal{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;
-    padding:14px; padding-bottom:max(14px, env(safe-area-inset-bottom));
+    padding:10px; padding-bottom:max(10px, env(safe-area-inset-bottom));
     background:rgba(42,18,22,.52);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
   .up-modal.open{display:flex;animation:upfade .22s ease}
   @keyframes upfade{from{opacity:0}to{opacity:1}}
   /* dvh desconta as barras do navegador no iPhone; a linha em vh é reserva p/ navegador antigo */
   .up-card{position:relative;display:flex;flex-direction:column;
     width:100%;max-width:360px;
-    max-height:86vh;
-    max-height:min(86dvh, 600px);
+    max-height:calc(100vh - 20px);
+    max-height:calc(100dvh - 20px);
     background:linear-gradient(180deg,#ffffff,#FFF4F5);border:2px solid var(--pink);border-radius:20px;
     text-align:center;box-shadow:0 20px 50px rgba(210,22,43,.38);overflow:hidden;
     animation:uppop .3s cubic-bezier(.2,.9,.3,1.2)}
   @keyframes uppop{from{transform:scale(.9);opacity:.4}to{transform:scale(1);opacity:1}}
   /* só o miolo rola (min-height:0 deixa o filho do flex encolher); o rodapé com as 2 escolhas fica sempre visível */
-  .up-corpo{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:22px 18px 4px}
-  .up-pe{flex-shrink:0;padding:12px 18px 16px;background:#FFF4F5;border-top:1px solid #F6DDE0}
+  .up-corpo{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 16px 10px}
+  .up-pe{flex-shrink:0;padding:10px 16px 8px;background:#FFF4F5;border-top:1px solid #F6DDE0}
   .up-x{position:absolute;top:9px;right:10px;z-index:2;cursor:pointer;border:none;background:rgba(0,0,0,.07);color:#8A6B70;
     width:30px;height:30px;border-radius:50%;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
   .up-badge{display:inline-block;background:var(--gold);color:#3a2600;font-weight:800;font-size:11px;letter-spacing:.4px;
-    padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:8px}
-  .up-card h3{font-size:19px;font-weight:800;line-height:1.16;color:var(--ink)}
+    padding:4px 11px;border-radius:20px;text-transform:uppercase;margin-bottom:6px}
+  .up-card h3{font-size:18px;font-weight:800;line-height:1.16;color:var(--ink)}
   .up-card h3 .hl{color:var(--pink)}
-  .up-sub{font-size:13.5px;color:#5a3b41;font-weight:500;margin-top:8px;line-height:1.4}
+  .up-sub{font-size:13px;color:#5a3b41;font-weight:500;margin-top:6px;line-height:1.35}
   .up-sub b{color:var(--pink-deep)}
-  .up-dream{position:relative;text-align:left;margin:14px 0 0;padding:11px 12px;
+  .up-dream{position:relative;text-align:left;margin:14px 0 0;padding:9px 11px;
     border-radius:12px;background:linear-gradient(135deg,#FFE7EA,#FFD0D6);
     border:1.5px solid var(--pink);box-shadow:0 6px 16px rgba(210,22,43,.16)}
   .up-dream .t{display:block;font-size:13.5px;font-weight:800;color:var(--pink-deep);line-height:1.2}
@@ -212,21 +212,28 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
   .up-dream .inc{position:absolute;top:-9px;right:9px;background:var(--pink);color:#fff;
     font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
     padding:3px 9px;border-radius:20px;box-shadow:0 3px 8px rgba(210,22,43,.35)}
-  .up-list{text-align:left;background:#fff;border:1px solid #F3D3D8;border-radius:12px;padding:10px 12px;margin:12px 0 10px;font-size:12.5px;font-weight:500;color:#3d2327;line-height:1.35}
-  .up-list div{padding:2.5px 0}
+  .up-list{text-align:left;background:#fff;border:1px solid #F3D3D8;border-radius:12px;padding:8px 11px;margin:10px 0 2px;font-size:12px;font-weight:500;color:#3d2327;line-height:1.3}
+  .up-list div{padding:2px 0}
   .up-list b{color:var(--pink-deep)}
-  .up-price{margin:4px 0 0}
-  .up-price .de{color:var(--muted);font-weight:600;font-size:13px}
-  .up-price .por{font-size:34px;font-weight:800;color:var(--pink);line-height:1.05;letter-spacing:-1px}
-  .up-price .por small{font-size:17px;vertical-align:top;margin-right:2px}
   .up-yes{display:block;width:100%;text-decoration:none;text-align:center;cursor:pointer;border:none;font-family:inherit;
     background:linear-gradient(180deg,#EA2A40,#B8101F);color:#fff;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.2px;
-    padding:14px 12px;border-radius:13px;box-shadow:0 10px 22px rgba(210,22,43,.38);animation:pulse 1.8s ease-in-out infinite}
+    padding:11px 12px;border-radius:13px;box-shadow:0 10px 22px rgba(210,22,43,.38);animation:pulse 1.8s ease-in-out infinite}
   .up-yes .s{display:block;font-size:11px;font-weight:600;text-transform:none;opacity:.95;margin-top:2px}
   /* o "não" é a rota de R$ 9,90: secundário no visual, mas com alvo de toque de 44px */
   .up-no{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;
     background:none;border:none;cursor:pointer;font-family:inherit;color:#7a5a60;
-    font-size:13.5px;font-weight:600;margin-top:6px;text-decoration:underline;text-underline-offset:2px}
+    font-size:13px;font-weight:600;margin-top:2px;text-decoration:underline;text-underline-offset:2px}
+  /* telas baixas (iPhone SE, navegador do Instagram): tira o selo e aperta o espaço para o popup caber sem rolar */
+  @media (max-height:640px){
+    .up-badge{display:none}
+    .up-corpo{padding-top:14px}
+    .up-card h3{font-size:17px;padding:0 22px}
+    .up-dream{margin-top:12px}
+    .up-list{margin-top:8px}
+    .up-list div{padding:1px 0}
+    .up-sub{font-size:12.5px;margin-top:4px}
+    .up-pe{padding:8px 16px 4px}
+  }
 </style>
 </head>
 <body>
@@ -428,7 +435,7 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
       <div class="up-dream">
         <span class="inc">Incluído</span>
         <span class="t">🎬 2ª e 3ª temporadas</span>
-        <span class="d">Mais 225 episódios dublados: novas emoções e descobertas, até a despedida inesquecível no último capítulo.</span>
+        <span class="d">Mais 225 episódios dublados, até a despedida no último capítulo.</span>
       </div>
 
       <div class="up-list">
@@ -437,10 +444,6 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
         <div>📥 Baixe e assista <b>offline</b></div>
         <div>📖 <b>Resumo de cada capítulo</b>, organizados por temporada</div>
         <div>⭐ Salve seus <b>capítulos favoritos</b></div>
-      </div>
-      <div class="up-price">
-        <div class="de">Por apenas +R$10</div>
-        <div class="por"><small>R$</small>19,90</div>
       </div>
     </div>
 
