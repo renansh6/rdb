@@ -28,7 +28,7 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
 <meta name="theme-color" content="#D2162B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="img/banner.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="img/banner-3x2.jpg" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800&display=swap"
       media="print" onload="this.media='all';this.onload=null">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800&display=swap"></noscript>
@@ -65,21 +65,12 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
 
   /* ---------- HERO ---------- */
   .hero{text-align:center}
-  /* quadro na proporção do banner da LP da Barbie (1536x1024 = 3:2).
-     O banner vertical fica inteiro dentro dele, sem cortar nem esticar;
-     as laterais são preenchidas com a própria arte desfocada. */
-  .hero-frame{
-    position:relative;overflow:hidden;
-    width:calc(100% + 40px);margin:0 -20px;aspect-ratio:3/2;
-    border-radius:0 0 24px 24px;background:#0d0d0d;
+  /* banner horizontal 1536x1024 (3:2), mesmo formato do banner da LP da Barbie */
+  .hero-banner{
+    display:block;width:calc(100% + 40px);margin:0 -20px;height:auto;
+    border-radius:0 0 24px 24px;
     box-shadow:0 14px 34px rgba(210,22,43,.22);
   }
-  .hero-frame::before{
-    content:"";position:absolute;inset:-30px;
-    background:url(img/banner.jpg) center/cover no-repeat;
-    filter:blur(22px) brightness(.6);
-  }
-  .hero-banner{position:relative;display:block;height:100%;width:auto;margin:0 auto;object-fit:contain}
   .hero-sub{font-size:15.5px;color:#5a3b41;font-weight:500;margin-top:20px;padding:0 6px}
   .hero-sub b{color:var(--pink-deep)}
 
@@ -203,7 +194,7 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
 
   <!-- ===================== HERO ===================== -->
   <header class="hero">
-    <h1 class="hero-frame"><img class="hero-banner" src="img/banner.jpg" width="941" height="1672" fetchpriority="high" decoding="async"
+    <h1><img class="hero-banner" src="img/banner-3x2.jpg" width="1536" height="1024" fetchpriority="high" decoding="async"
       alt="Rebelde. A novela que marcou uma geração. Seu coração ainda é Rebelde. Reviva os romances, as músicas e cada emoção de Elite Way School. Novela completa, dublada."></h1>
     <p class="hero-sub">Agora você pode assistir a <b>Rebelde completa, com as 3 temporadas</b>, dublada em português, do primeiro ao último capítulo! ❤️</p>
   </header>
