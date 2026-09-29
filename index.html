@@ -285,6 +285,41 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
 
 .star{position:absolute;width:44px;height:44px;opacity:.8;pointer-events:none}
 
+/* ---------- oferta ---------- */
+.offer-pill{color:#ff5a6a;margin-bottom:14px}
+.final .offer-pill{display:table;margin:0 auto 14px}
+.stage#oferta{padding-top:44px}
+
+/* ---------- o que você recebe ---------- */
+.receive{padding:56px 0 64px}
+.receive .box{margin-bottom:56px}
+.receive .box .hand{font-size:1.5rem;transform:rotate(-2deg);margin-bottom:6px}
+.receive .box .btn{width:100%;justify-content:center}
+.notebook{margin-top:-4px}
+.notebook .sub.story{max-width:60ch;margin:6px auto 0;font-size:1.1rem;line-height:1.5}
+
+/* ---------- aparelhos ---------- */
+.devices{padding:56px 0 60px;background:var(--noise),radial-gradient(ellipse at 50% 0,#211d1c 0%,#0c0b0b 70%)}
+.devices h2{font:400 clamp(2rem,4.6vw,3.2rem)/1.05 var(--serif);margin-top:4px}
+.devices .hand{transform:rotate(-2deg)}
+.device-grid{display:grid;grid-template-columns:repeat(3,minmax(0,180px));justify-content:center;gap:16px;margin:30px 0 22px}
+.device{display:flex;flex-direction:column;align-items:center;gap:10px;padding:22px 10px;border:1px solid #3a3030;border-radius:10px;
+  background:rgba(255,255,255,.03)}
+.device svg{width:40px;height:40px;color:var(--red)}
+.device b{font:600 1.05rem var(--sans)}
+.devices .sub{color:#e9e1d6;font:400 1.1rem/1.45 var(--serif)}
+.devices .devices-end{margin-top:18px}
+
+/* ---------- garantia ---------- */
+.guarantee{background:var(--paper);color:var(--ink);padding:24px 0 20px}
+.seal{width:112px;height:112px;margin:0 auto 18px;border-radius:50%;display:grid;place-content:center;text-align:center;
+  background:var(--red);color:#fff;box-shadow:0 0 0 5px var(--paper),0 0 0 8px var(--red),0 10px 24px rgba(0,0,0,.25)}
+.seal b{font:400 2.8rem/1 var(--serif)}
+.seal span{font:700 .85rem/1 var(--cond);letter-spacing:.16em;text-transform:uppercase}
+.guarantee h2{font:400 clamp(1.9rem,4.2vw,2.8rem)/1.1 var(--serif)}
+.guarantee .sub{max-width:48ch;margin:12px auto 22px;font:400 1.1rem/1.5 var(--serif);color:#2c2824}
+.guarantee+.faq{padding-top:44px}
+
 /* ---------- responsivo ---------- */
 @media (max-width:900px){
   header nav{display:none}
@@ -301,6 +336,10 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
   .star-l,.star-t{display:none}
   .crest{width:40px;top:12px;right:4%}
   .notebook .hand{font-size:1.45rem}
+  .device-grid{gap:10px}
+  .device{padding:16px 6px}
+  .device svg{width:32px;height:32px}
+  .device b{font-size:.95rem}
 }
 @media (max-width:480px){
   .box{padding:26px 20px}
@@ -336,32 +375,12 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
     </div>
   </section>
 
-  <!-- MEMÓRIAS -->
-  <section class="notebook">
-    <svg class="star star-l" style="left:7%;top:62px;width:40px;height:40px;color:#2a2a2a"><use href="#star"/></svg>
-    <svg class="star star-t" style="right:13%;top:26px;width:30px;height:30px;color:#2a2a2a"><use href="#star"/></svg>
-    <svg class="star" style="right:2%;top:84px;width:34px;height:34px;color:var(--red)"><use href="#star"/></svg>
-    <svg class="crest" viewBox="0 0 60 70" aria-hidden="true">
-      <defs><clipPath id="crest-in"><path d="M8 8h44v24c0 15-10 24-22 29C18 56 8 47 8 32z"/></clipPath></defs>
-      <path d="M4 4h52v28c0 18-12 28-26 34C16 60 4 50 4 32z" fill="#fff" stroke="#b3121f" stroke-width="3"/>
-      <g clip-path="url(#crest-in)"><rect x="0" y="0" width="30" height="34" fill="#c4142a"/><rect x="30" y="0" width="30" height="34" fill="#1d3f8f"/><rect x="0" y="34" width="30" height="40" fill="#1d3f8f"/><rect x="30" y="34" width="30" height="40" fill="#c4142a"/></g>
-      <g fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="15" text-anchor="middle"><text x="19" y="27">E</text><text x="41" y="27">W</text><text x="30" y="52">W</text></g>
-    </svg>
-    <div class="wrap center">
-      <p class="hand">É impossível não lembrar...</p>
-      <h2>Você lembra da <span class="mark">primeira<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> vez?</h2>
-      <div class="memories carousel">
-        <figure class="memory"><div class="ph" style="background-image:url(img/casal2.jpg)"><video src="img/casal2.mp4" poster="img/casal2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div></figure>
-        <figure class="memory"><div class="ph" style="background-image:url(img/casal3.jpg)"><video src="img/casal3.mp4" poster="img/casal3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div></figure>
-        <figure class="memory"><div class="ph" style="background-image:url(img/casal4.jpg)"><video src="img/casal4.mp4" poster="img/casal4.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div></figure>
-      </div>
-    </div>
-  </section>
-
   <!-- TEMPORADAS -->
   <section class="seasons" id="temporadas">
     <div class="wrap center">
-      <h2>3 temporadas com 440 episódios completos para maratonar em um só lugar</h2>
+      <span class="pill offer-pill">Oferta exclusiva</span>
+      <h2>A novela completa de Rebelde, num lugar só</h2>
+      <p class="sub">3 temporadas com 440 episódios completos para maratonar:</p>
       <div class="season-grid carousel">
         <article class="season">
           <div class="ph"><img src="img/temporada1.jpg" alt="" onerror="this.remove()"><span>img/temporada1.jpg</span></div>
@@ -379,66 +398,14 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
           <h3>3<sup>a</sup> Temporada</h3><p>Uma despedida inesquecível</p><div class="tags"><span class="pill pill-red">105 episódios</span><span class="pill">Dublada</span></div>
         </article>
       </div>
-      <div class="section-cta"><a class="btn hero-cta" href="#planos">Quero meu acesso agora</a></div>
     </div>
   </section>
 
-  <!-- PERSONAGENS -->
-  <section class="cast" id="personagens">
-    <svg class="star" style="left:4%;top:24px;color:#ffd0d4"><use href="#star"/></svg>
-    <svg class="star" style="right:5%;top:30px;color:#ffd0d4;width:60px;height:60px"><use href="#star"/></svg>
-    <div class="wrap center">
-      <h2>Seis rebeldes. Uma geração inteira.</h2>
-      <p class="sub">Qual deles marcou a sua história?</p>
-      <div class="polaroids">
-        <div class="polaroid"><div class="ph"><img src="img/mia.jpg" alt="Mía" onerror="this.remove()"><span>mia.jpg</span></div><b>Mía</b></div>
-        <div class="polaroid"><div class="ph"><img src="img/roberta.jpg" alt="Roberta" onerror="this.remove()"><span>roberta.jpg</span></div><b>Roberta</b></div>
-        <div class="polaroid"><div class="ph"><img src="img/lupita.jpg" alt="Lupita" onerror="this.remove()"><span>lupita.jpg</span></div><b>Lupita</b></div>
-        <div class="polaroid"><div class="ph"><img src="img/miguel.jpg" alt="Miguel" onerror="this.remove()"><span>miguel.jpg</span></div><b>Miguel</b></div>
-        <div class="polaroid"><div class="ph"><img src="img/diego.jpg" alt="Diego" onerror="this.remove()"><span>diego.jpg</span></div><b>Diego</b></div>
-        <div class="polaroid"><div class="ph"><img src="img/giovanni.jpg" alt="Giovanni" onerror="this.remove()"><span>giovanni.jpg</span></div><b>Giovanni</b></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DEPOIMENTOS -->
-  <section class="reviews" id="depoimentos">
-    <div class="wrap">
-      <p class="hand">Quem reviu, se apaixonou de novo...</p>
-      <h2>O que os fãs estão dizendo</h2>
-    </div>
-    <div class="marquee">
-      <div class="marquee-track">
-        <img src="img/dep1.jpg" width="840" height="840" loading="lazy"  alt="Comentário no Instagram de robtaques: Assistindo essa cena depois de adulto chega ser cômico kkkk parece aquelas cenas de novelas indiana, mas ainda amo meu rbd kkkk">
-        <img src="img/dep2.jpg" width="840" height="840" loading="lazy"  alt="Comentário no Instagram de germanda__: Gente tô assistindo novamente, e é uma mistura de nostalgia com vergonha alheia kkkk tem umas cenas que começo a dar risada, e o barulho dos sapatos então. Mesmo assim amor">
-        <img src="img/dep3.jpg" width="560" height="840" loading="lazy"  alt="Trecho de comentário no Instagram de jaqueline_reis2020 contando que, quando criança, só conseguia assistir Rebelde nas férias na casa dos avós">
-        <img src="img/dep4.jpg" width="472" height="840" loading="lazy"  alt="Conversa ilustrativa com comentário original do Instagram de _amandnery: Estou maratonando cada capítulo como se fosse a primeira vez">
-        <img src="img/dep5.jpg" width="472" height="840" loading="lazy"  alt="Conversa ilustrativa com comentário original do Instagram de jufranzen: Vou assistir pela terceira vez! Amo tanto que fiz até uma análise psicológica dos personagens no meu perfil">
-        <img src="img/dep1.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep2.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep3.jpg" width="560" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep4.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep5.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep1.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep2.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep3.jpg" width="560" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep4.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
-        <img src="img/dep5.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
-      </div>
-    </div>
-  </section>
-
-  <!-- DESTAQUE -->
-  <section class="stage" id="destaque">
+  <!-- PLANOS -->
+  <section class="stage" id="oferta">
     <div class="stage-bg"></div>
     <p class="side-hand" aria-hidden="true">Música<br>amizade<br>amor<br>sempre ♡</p>
     <div class="wrap">
-      <div class="vsl">
-        <p class="hand">Sem mistério...</p>
-        <h2>Veja por dentro como você vai assistir</h2>
-        <p class="sub">Todos os capítulos organizados, com o resumo de cada um. É só escolher e dar o play.</p>
-        <div class="ph vsl-frame" style="background-image:url(img/vsl.jpg)"><video src="img/vsl.mp4" poster="img/vsl.jpg" muted loop playsinline preload="none" aria-label="Gravação de tela mostrando a lista de capítulos de Rebelde"></video></div>
-      </div>
       <p class="kicker" id="planos">Sua próxima maratona começa aqui</p>
       <div class="plans">
         <article class="plan">
@@ -475,12 +442,157 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
       <div class="trust">
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Compra segura</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>SSL protegido</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7 dias de garantia</span>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- O QUE VOCÊ RECEBE -->
+  <section class="stage receive" id="conteudo">
+    <div class="stage-bg"></div>
+    <div class="wrap">
+      <div class="box">
+        <p class="hand">Assim que o pagamento for confirmado...</p>
+        <h2>Você recebe tudo isso</h2>
+        <ul class="checks">
+          <li>As 3 temporadas de Rebelde, com 440 episódios</li>
+          <li>Novela completa e dublada em português</li>
+          <li>Capítulos organizados por temporada</li>
+          <li>Resumo de cada capítulo</li>
+          <li><span><b>Sem anúncios</b>, sem interrupções</span></li>
+          <li><span>Baixe e assista <b>offline</b></span></li>
+          <li>Salve seus capítulos favoritos</li>
+          <li>Link de acesso direto no seu e-mail</li>
+          <li>Acesso vitalício</li>
+        </ul>
+        <a class="btn" href="#planos">Quero meu acesso agora</a>
+      </div>
+      <div class="vsl">
+        <p class="hand">Sem mistério...</p>
+        <h2>Veja por dentro como você vai assistir</h2>
+        <p class="sub">Todos os capítulos organizados, com o resumo de cada um. É só escolher e dar o play.</p>
+        <div class="ph vsl-frame" style="background-image:url(img/vsl.jpg)"><video src="img/vsl.mp4" poster="img/vsl.jpg" muted loop playsinline preload="none" aria-label="Gravação de tela mostrando a lista de capítulos de Rebelde"></video></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="reviews" id="depoimentos">
+    <div class="wrap">
+      <p class="hand">Quem reviu, se apaixonou de novo...</p>
+      <h2>O que os fãs estão dizendo</h2>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <img src="img/dep1.jpg" width="840" height="840" loading="lazy"  alt="Comentário no Instagram de robtaques: Assistindo essa cena depois de adulto chega ser cômico kkkk parece aquelas cenas de novelas indiana, mas ainda amo meu rbd kkkk">
+        <img src="img/dep2.jpg" width="840" height="840" loading="lazy"  alt="Comentário no Instagram de germanda__: Gente tô assistindo novamente, e é uma mistura de nostalgia com vergonha alheia kkkk tem umas cenas que começo a dar risada, e o barulho dos sapatos então. Mesmo assim amor">
+        <img src="img/dep3.jpg" width="560" height="840" loading="lazy"  alt="Trecho de comentário no Instagram de jaqueline_reis2020 contando que, quando criança, só conseguia assistir Rebelde nas férias na casa dos avós">
+        <img src="img/dep4.jpg" width="472" height="840" loading="lazy"  alt="Conversa ilustrativa com comentário original do Instagram de _amandnery: Estou maratonando cada capítulo como se fosse a primeira vez">
+        <img src="img/dep5.jpg" width="472" height="840" loading="lazy"  alt="Conversa ilustrativa com comentário original do Instagram de jufranzen: Vou assistir pela terceira vez! Amo tanto que fiz até uma análise psicológica dos personagens no meu perfil">
+        <img src="img/dep1.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep2.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep3.jpg" width="560" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep4.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep5.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep1.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep2.jpg" width="840" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep3.jpg" width="560" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep4.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
+        <img src="img/dep5.jpg" width="472" height="840" loading="lazy" aria-hidden="true" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMÓRIAS -->
+  <section class="notebook">
+    <svg class="star star-l" style="left:7%;top:62px;width:40px;height:40px;color:#2a2a2a"><use href="#star"/></svg>
+    <svg class="star star-t" style="right:13%;top:26px;width:30px;height:30px;color:#2a2a2a"><use href="#star"/></svg>
+    <svg class="star" style="right:2%;top:84px;width:34px;height:34px;color:var(--red)"><use href="#star"/></svg>
+    <svg class="crest" viewBox="0 0 60 70" aria-hidden="true">
+      <defs><clipPath id="crest-in"><path d="M8 8h44v24c0 15-10 24-22 29C18 56 8 47 8 32z"/></clipPath></defs>
+      <path d="M4 4h52v28c0 18-12 28-26 34C16 60 4 50 4 32z" fill="#fff" stroke="#b3121f" stroke-width="3"/>
+      <g clip-path="url(#crest-in)"><rect x="0" y="0" width="30" height="34" fill="#c4142a"/><rect x="30" y="0" width="30" height="34" fill="#1d3f8f"/><rect x="0" y="34" width="30" height="40" fill="#1d3f8f"/><rect x="30" y="34" width="30" height="40" fill="#c4142a"/></g>
+      <g fill="#fff" font-family="Georgia,serif" font-weight="700" font-size="15" text-anchor="middle"><text x="19" y="27">E</text><text x="41" y="27">W</text><text x="30" y="52">W</text></g>
+    </svg>
+    <div class="wrap center">
+      <p class="hand">É impossível não lembrar...</p>
+      <h2>Você lembra da <span class="mark">primeira<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C60 2,120 13,180 6 S270 4,298 8" stroke="#d2162b" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span> vez?</h2>
+      <p class="sub story">Sabemos como é difícil achar Rebelde completa, dublada e na ordem certa: episódios faltando, vídeos cortados e links que somem do dia pra noite. Por isso reunimos a novela inteira num lugar só, pra você reviver cada momento sem procurar mais nada.</p>
+      <div class="memories carousel">
+        <figure class="memory"><div class="ph" style="background-image:url(img/casal2.jpg)"><video src="img/casal2.mp4" poster="img/casal2.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div></figure>
+        <figure class="memory"><div class="ph" style="background-image:url(img/casal3.jpg)"><video src="img/casal3.mp4" poster="img/casal3.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div></figure>
+        <figure class="memory"><div class="ph" style="background-image:url(img/casal4.jpg)"><video src="img/casal4.mp4" poster="img/casal4.jpg" muted loop playsinline preload="none" aria-hidden="true"></video><div class="sound-ctl"><button class="sound" type="button" aria-pressed="false" aria-label="Ativar som do vídeo"><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 5 6m0-6-5 6"/></svg><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></button><input class="vol" type="range" min="0" max="1" step="0.05" value="0" aria-label="Volume do vídeo"></div></div></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAGENS -->
+  <section class="cast" id="personagens">
+    <svg class="star" style="left:4%;top:24px;color:#ffd0d4"><use href="#star"/></svg>
+    <svg class="star" style="right:5%;top:30px;color:#ffd0d4;width:60px;height:60px"><use href="#star"/></svg>
+    <div class="wrap center">
+      <h2>Seis rebeldes. Uma geração inteira.</h2>
+      <p class="sub">Qual deles marcou a sua história?</p>
+      <div class="polaroids">
+        <div class="polaroid"><div class="ph"><img src="img/mia.jpg" alt="Mía" onerror="this.remove()"><span>mia.jpg</span></div><b>Mía</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/roberta.jpg" alt="Roberta" onerror="this.remove()"><span>roberta.jpg</span></div><b>Roberta</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/lupita.jpg" alt="Lupita" onerror="this.remove()"><span>lupita.jpg</span></div><b>Lupita</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/miguel.jpg" alt="Miguel" onerror="this.remove()"><span>miguel.jpg</span></div><b>Miguel</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/diego.jpg" alt="Diego" onerror="this.remove()"><span>diego.jpg</span></div><b>Diego</b></div>
+        <div class="polaroid"><div class="ph"><img src="img/giovanni.jpg" alt="Giovanni" onerror="this.remove()"><span>giovanni.jpg</span></div><b>Giovanni</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APARELHOS -->
+  <section class="devices">
+    <div class="wrap center">
+      <p class="hand">Onde e quando quiser...</p>
+      <h2>Assista em qualquer aparelho</h2>
+      <div class="device-grid">
+        <div class="device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><b>Celular</b></div>
+        <div class="device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg><b>Notebook</b></div>
+        <div class="device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="13" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg><b>Smart TV</b></div>
+      </div>
+      <p class="sub">Sem instalar nada: é só abrir o link no navegador e dar o play.</p>
+      <p class="hand devices-end">Não perca essa nostalgia ♡</p>
+    </div>
+  </section>
+
+  <!-- CHAMADA FINAL -->
+  <section class="final">
+    <svg class="star" style="left:6%;top:48px;color:#ffd0d4"><use href="#star"/></svg>
+    <svg class="star" style="right:7%;bottom:60px;color:#ffd0d4;width:56px;height:56px"><use href="#star"/></svg>
+    <div class="wrap">
+      <span class="pill offer-pill">Última chamada</span>
+      <p class="hand">E aí, vai deixar pra depois?</p>
+      <h2>Tem histórias que a gente nunca esquece. <em>Essa é a sua.</em></h2>
+      <p class="sub">Volte para o Elite Way School e sinta tudo de novo: cada música, cada briga, cada primeiro amor.</p>
+      <div class="final-btns">
+        <!-- links do checkout -->
+        <a class="btn" href="https://pay.lowify.com.br/checkout?product_id=L2dxxX">Quero tudo por R$ 19,90</a>
+        <a class="btn btn-alt" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero o plano R$ 9,90</a>
+      </div>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Compra segura</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>SSL protegido</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7 dias de garantia</span>
+      </div>
+      <small>Acesso vitalício • Link enviado por e-mail</small>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
   <div class="torn-top"></div>
+  <section class="guarantee">
+    <div class="wrap center">
+      <div class="seal" aria-hidden="true"><b>7</b><span>dias</span></div>
+      <h2>7 dias de garantia incondicional</h2>
+      <p class="sub">Se por qualquer motivo você não gostar, é só pedir o reembolso em até 7 dias após a compra e você recebe todo o valor de volta. Risco zero.</p>
+      <a class="btn btn-alt" href="https://wa.me/5519994613334?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20de%20Rebelde%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Falar com a gente</a>
+    </div>
+  </section>
+
   <section class="faq" id="perguntas">
     <div class="wrap">
       <h2>Perguntas frequentes</h2>
@@ -495,27 +607,6 @@ footer small{display:block;margin-top:24px;color:var(--muted);font-size:.8rem;le
     </div>
   </section>
   <div class="torn-bottom"></div>
-
-  <!-- CHAMADA FINAL -->
-  <section class="final">
-    <svg class="star" style="left:6%;top:48px;color:#ffd0d4"><use href="#star"/></svg>
-    <svg class="star" style="right:7%;bottom:60px;color:#ffd0d4;width:56px;height:56px"><use href="#star"/></svg>
-    <div class="wrap">
-      <p class="hand">E aí, vai deixar pra depois?</p>
-      <h2>Tem histórias que a gente nunca esquece. <em>Essa é a sua.</em></h2>
-      <p class="sub">Volte para o Elite Way School e sinta tudo de novo: cada música, cada briga, cada primeiro amor.</p>
-      <div class="final-btns">
-        <!-- links do checkout -->
-        <a class="btn" href="https://pay.lowify.com.br/checkout?product_id=L2dxxX">Quero tudo por R$ 19,90</a>
-        <a class="btn btn-alt" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero o plano R$ 9,90</a>
-      </div>
-      <div class="trust">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg>Compra segura</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>SSL protegido</span>
-      </div>
-      <small>Acesso vitalício • Link enviado por e-mail</small>
-    </div>
-  </section>
 </main>
 
 <footer>
