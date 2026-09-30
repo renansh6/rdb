@@ -386,5 +386,17 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
 
 </div>
 
+<!-- back redirect: botão "voltar" leva para a LP da 1ª temporada (mantém as UTMs) -->
+<script>
+(function(){
+  var destino="https://rebelde-t1-lp.vercel.app/"+location.search;
+  function marcar(){try{history.pushState({br:1},"",location.href);}catch(e){}}
+  marcar();
+  // Chrome ignora entradas criadas sem interação; repete no primeiro toque/clique
+  function primeiro(){marcar();["pointerdown","touchstart","keydown"].forEach(function(t){removeEventListener(t,primeiro,true);});}
+  ["pointerdown","touchstart","keydown"].forEach(function(t){addEventListener(t,primeiro,{capture:true,passive:true});});
+  addEventListener("popstate",function(){location.replace(destino);});
+})();
+</script>
 </body>
 </html>
