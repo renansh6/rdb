@@ -186,63 +186,6 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
   .titulos span{font-size:11px;font-weight:700;color:#b3182c;background:#fff;
     border:1.2px solid #ffc9d0;border-radius:20px;padding:4px 9px;line-height:1.15;white-space:nowrap}
   .titulos span.mais{background:linear-gradient(180deg,#EA2A40,#B8101F);color:#fff;border-color:transparent}
-
-  /* ---------- POPUP DE UPGRADE (3 temporadas por R$ 19,90) ---------- */
-  .up-modal{position:fixed;inset:0;z-index:9998;display:none;align-items:center;justify-content:center;
-    padding:10px; padding-bottom:max(10px, env(safe-area-inset-bottom));
-    background:rgba(42,18,22,.52);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
-  .up-modal.open{display:flex;animation:upfade .22s ease}
-  @keyframes upfade{from{opacity:0}to{opacity:1}}
-  /* dvh desconta as barras do navegador no iPhone; a linha em vh é reserva p/ navegador antigo */
-  .up-card{position:relative;display:flex;flex-direction:column;
-    width:100%;max-width:360px;
-    max-height:calc(100vh - 20px);
-    max-height:calc(100dvh - 20px);
-    background:linear-gradient(180deg,#ffffff,#FFF4F5);border:2px solid var(--pink);border-radius:20px;
-    text-align:center;box-shadow:0 20px 50px rgba(210,22,43,.38);overflow:hidden;
-    animation:uppop .3s cubic-bezier(.2,.9,.3,1.2)}
-  @keyframes uppop{from{transform:scale(.9);opacity:.4}to{transform:scale(1);opacity:1}}
-  /* só o miolo rola (min-height:0 deixa o filho do flex encolher); o rodapé com as 2 escolhas fica sempre visível */
-  .up-corpo{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 16px 10px}
-  .up-pe{flex-shrink:0;padding:10px 16px 8px;background:#FFF4F5;border-top:1px solid #F6DDE0}
-  .up-x{position:absolute;top:9px;right:10px;z-index:2;cursor:pointer;border:none;background:rgba(0,0,0,.07);color:#8A6B70;
-    width:30px;height:30px;border-radius:50%;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center}
-  .up-badge{display:inline-block;background:var(--gold);color:#3a2600;font-weight:800;font-size:11px;letter-spacing:.4px;
-    padding:4px 11px;border-radius:20px;text-transform:uppercase;margin-bottom:6px}
-  .up-card h3{font-size:18px;font-weight:800;line-height:1.16;color:var(--ink)}
-  .up-card h3 .hl{color:var(--pink)}
-  .up-sub{font-size:13px;color:#5a3b41;font-weight:500;margin-top:6px;line-height:1.35}
-  .up-sub b{color:var(--pink-deep)}
-  .up-dream{position:relative;text-align:left;margin:14px 0 0;padding:9px 11px;
-    border-radius:12px;background:linear-gradient(135deg,#FFE7EA,#FFD0D6);
-    border:1.5px solid var(--pink);box-shadow:0 6px 16px rgba(210,22,43,.16)}
-  .up-dream .t{display:block;font-size:13.5px;font-weight:800;color:var(--pink-deep);line-height:1.2}
-  .up-dream .d{display:block;font-size:11.5px;font-weight:500;color:#5a3b41;margin-top:4px;line-height:1.35}
-  .up-dream .inc{position:absolute;top:-9px;right:9px;background:var(--pink);color:#fff;
-    font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
-    padding:3px 9px;border-radius:20px;box-shadow:0 3px 8px rgba(210,22,43,.35)}
-  .up-list{text-align:left;background:#fff;border:1px solid #F3D3D8;border-radius:12px;padding:8px 11px;margin:10px 0 2px;font-size:12px;font-weight:500;color:#3d2327;line-height:1.3}
-  .up-list div{padding:2px 0}
-  .up-list b{color:var(--pink-deep)}
-  .up-yes{display:block;width:100%;text-decoration:none;text-align:center;cursor:pointer;border:none;font-family:inherit;
-    background:linear-gradient(180deg,#EA2A40,#B8101F);color:#fff;font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.2px;
-    padding:11px 12px;border-radius:13px;box-shadow:0 10px 22px rgba(210,22,43,.38);animation:pulse 1.8s ease-in-out infinite}
-  .up-yes .s{display:block;font-size:11px;font-weight:600;text-transform:none;opacity:.95;margin-top:2px}
-  /* o "não" é a rota de R$ 9,90: secundário no visual, mas com alvo de toque de 44px */
-  .up-no{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;
-    background:none;border:none;cursor:pointer;font-family:inherit;color:#7a5a60;
-    font-size:13px;font-weight:600;margin-top:2px;text-decoration:underline;text-underline-offset:2px}
-  /* telas baixas (iPhone SE, navegador do Instagram): tira o selo e aperta o espaço para o popup caber sem rolar */
-  @media (max-height:640px){
-    .up-badge{display:none}
-    .up-corpo{padding-top:14px}
-    .up-card h3{font-size:17px;padding:0 22px}
-    .up-dream{margin-top:12px}
-    .up-list{margin-top:8px}
-    .up-list div{padding:1px 0}
-    .up-sub{font-size:12.5px;margin-top:4px}
-    .up-pe{padding:8px 16px 4px}
-  }
 </style>
 </head>
 <body>
@@ -262,8 +205,8 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
   <section class="offer" id="oferta">
     <div class="offer-tag">Oferta Exclusiva</div>
     <div class="offer-scarcity">🔥 Acesso vitalício — pague uma vez só</div>
-    <h3>A 1ª temporada de Rebelde completa, num lugar só</h3>
-    <div class="titulos-lead">Temporadas de Rebelde:</div>
+    <h3>A novela completa de Rebelde, num lugar só</h3>
+    <div class="titulos-lead">As 3 temporadas completas:</div>
     <div class="temporadas" aria-label="As 3 temporadas de Rebelde">
       <div class="temp-trilho">
         <figure class="temp">
@@ -305,11 +248,11 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
         </figure>
       </div>
     </div>
-    <div class="titulos" style="margin-top:9px"><span class="mais">1ª temporada · 215 episódios</span></div>
+    <div class="titulos" style="margin-top:9px"><span class="mais">3 temporadas · 440 episódios</span></div>
     <div class="for">Por apenas</div>
     <div class="price"><small>R$</small>9,90</div>
-    <!-- checkout do plano econômico (R$ 9,90); o clique abre o popup das 3 temporadas -->
-    <a class="cta cta-principal link_interno" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
+    <!-- checkout (R$ 9,90) — as 3 temporadas -->
+    <a class="cta" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
     <div class="offer-secure">🔒 Compra 100% segura<br>❤️ 7 dias de garantia — risco zero</div>
   </section>
   <p class="cta-note">Esse é apenas um valor simbólico para nos ajudar a manter tudo no ar e com qualidade para você! ❤️</p>
@@ -414,7 +357,7 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
     <h3>Reviva Rebelde ainda hoje</h3>
     <div class="for">Por apenas</div>
     <div class="price"><small>R$</small>9,90</div>
-    <a class="cta cta-principal link_interno" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
+    <a class="cta" href="https://pay.lowify.com.br/checkout?product_id=OdQhrN">Quero assistir Rebelde ❤️</a>
     <div class="offer-secure">🔒 Compra 100% segura · ❤️ 7 dias de garantia incondicional</div>
   </section>
 
@@ -438,74 +381,5 @@ src="https://www.facebook.com/tr?id=1613116693675934&ev=PageView&noscript=1"
 
 </div>
 
-
-<!-- ============ POPUP DE UPGRADE (aparece ao clicar no botão da oferta) ============ -->
-<div class="up-modal" id="upModal">
-  <div class="up-card" role="dialog" aria-modal="true" aria-labelledby="upTitle">
-    <button class="up-x" id="upX" type="button" aria-label="Fechar">×</button>
-
-    <!-- só esta parte rola -->
-    <div class="up-corpo">
-      <span class="up-badge">📺 As 3 temporadas completas</span>
-      <h3 id="upTitle">🚨 <span class="hl">NÃO PARE</span> NA 1ª TEMPORADA!</h3>
-      <p class="up-sub">Aproveite essa condição especial e tenha acesso às <b>3 temporadas completas</b> de Rebelde. ❤️</p>
-      <p class="up-sub">Reviva a história inteira e assista do primeiro ao último capítulo!</p>
-
-      <div class="up-dream">
-        <span class="inc">Incluído</span>
-        <span class="t">🎬 2ª e 3ª temporadas</span>
-        <span class="d">Mais 225 episódios dublados, até a despedida no último capítulo.</span>
-      </div>
-
-      <div class="up-list">
-        <div>✅ <b>440 episódios</b> — a novela completa, do início ao fim</div>
-        <div>🚫 <b>Sem anúncios</b>, sem interrupções</div>
-        <div>📥 Baixe e assista <b>offline</b></div>
-        <div>📖 <b>Resumo de cada capítulo</b>, organizados por temporada</div>
-        <div>⭐ Salve seus <b>capítulos favoritos</b></div>
-      </div>
-    </div>
-
-    <!-- este rodapé nunca sai da tela -->
-    <div class="up-pe">
-      <!-- checkout do plano premium (R$ 19,90) -->
-      <a class="up-yes" href="https://pay.lowify.com.br/checkout?product_id=L2dxxX">LIBERAR ACESSO COMPLETO →<span class="s">As 3 temporadas por R$19,90</span></a>
-      <button class="up-no" id="upNo" type="button">Não, quero só a 1ª temporada por R$9,90.</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  /* Checkout do plano econômico (R$ 9,90): é o destino dos botões da oferta. */
-  const CHECKOUT_PRINCIPAL = "https://pay.lowify.com.br/checkout?product_id=OdQhrN";
-
-  /* Os botões .cta-principal já vêm no HTML com o link de R$ 9,90 e a classe
-     "link_interno". Essa classe é reconhecida pelo próprio script da UTMify: com ela,
-     a UTMify DISPARA o InitiateCheckout no clique e NÃO navega sozinha — é isso que
-     deixa o botão abrir o popup sem perder o evento. Não regrave o href aqui: isso
-     apagaria as UTMs que a UTMify cola no link. */
-
-  const upModal = document.getElementById('upModal');
-  const openUp  = () => { upModal.classList.add('open'); document.body.style.overflow='hidden'; };
-  const closeUp = () => { upModal.classList.remove('open'); document.body.style.overflow=''; };
-
-  /* Delegação no document em fase de CAPTURA: a UTMify reescreve/clona o link para
-     colar as UTMs, e um listener no próprio botão se perderia. NÃO use
-     stopPropagation() aqui: isso cegaria a UTMify, o Meta e o Clarity; o
-     preventDefault() sozinho já segura a navegação. */
-  document.addEventListener('click', function(e){
-    var a = e.target && e.target.closest ? e.target.closest('.cta-principal') : null;
-    if(a){ e.preventDefault(); openUp(); }
-  }, true);
-
-  document.getElementById('upX').addEventListener('click', closeUp);
-  /* "Não": segue para o checkout de R$ 9,90 preservando as UTMs que a UTMify colou no link */
-  document.getElementById('upNo').addEventListener('click', function(){
-    var a = document.querySelector('.cta-principal');
-    location.href = (a && a.getAttribute('href')) || CHECKOUT_PRINCIPAL;
-  });
-  upModal.addEventListener('click', e => { if(e.target === upModal) closeUp(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape' && upModal.classList.contains('open')) closeUp(); });
-</script>
 </body>
 </html>
